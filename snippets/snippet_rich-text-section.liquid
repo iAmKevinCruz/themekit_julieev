@@ -1,0 +1,31 @@
+<section
+  class="
+    pxs-rich-text
+    pxs-rich-text-width-{{ block.settings.width }}
+  "
+>
+    <article
+      class="
+        pxs-rich-text-block
+        pxs-rich-text-heading-{{ block.settings.heading_size }}
+        {%- if block.settings.text_align != blank -%}
+          pxs-rich-text-alignment-{{ block.settings.text_align }}
+        {%- endif -%}
+      "
+      {{ block.shopify_attributes }}
+    >
+      {% if block.type == 'rich_text' %}
+        {% if block.settings.rt_heading != blank %}
+          <h2 class="pxs-rich-text-heading">
+            {{ block.settings.rt_heading | escape }}
+          </h2>
+        {% endif %}
+
+        {% if block.settings.rt_text != blank %}
+          <div class="pxs-rich-text-content rte">
+            {{ block.settings.rt_text }}
+          </div>
+        {% endif %}
+      {% endif %}
+    </article>
+</section>

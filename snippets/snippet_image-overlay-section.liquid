@@ -1,0 +1,89 @@
+{% if block.settings.enable_overlay_section %}
+<section
+  class="
+    pxs-image-with-text
+    pxs-image-with-text-section-height-{{ block.settings.section_height }}
+  "
+>
+  <div class="pxs-image-with-text-wrapper">
+    <div
+      class="pxs-image-with-text-background"
+      {% if block.settings.image_overlay != blank %}
+        {% capture background_style %}
+          {% if block.settings.section_height == 'original' %}
+            padding-bottom: {{- 100 | divided_by: block.settings.image_overlay.aspect_ratio -}}%;
+          {% endif %}
+          background-position: {{ block.settings.position }};
+        {% endcapture %}
+
+        {%
+          include 'rimg',
+          img: block.settings.image_overlay,
+          size: '1400x',
+          crop: 'center',
+          style: background_style,
+          lazy: true,
+          background: true
+        %}
+      {% endif %}
+      >
+    </div>
+
+    {% if block.settings.overlay_opacity != 0 and block.settings.overlay_background != 'rgba(0,0,0,0)' %}
+      {% assign opacity = block.block.overlay_opacity | times: 0.01 %}
+      {% assign overlay = block.settings.overlay_background | color_modify: 'alpha', opacity %}
+
+      <div
+        class="pxs-image-with-text-overlay"
+        style="background-color: {{ overlay }};"
+      ></div>
+    {% endif %}
+
+    <div
+      class="
+        pxs-image-with-text-content-wrapper
+        pxs-image-with-text-content-position-y-{{ block.settings.content_position | split: '-' | first }}
+        pxs-image-with-text-content-position-x-{{ block.settings.content_position | split: '-' | last }}
+      "
+    >
+        <div
+          class="pxs-image-with-text-content"
+          style="color: {{ block.settings.color }};"
+        >
+        {% if block.settings.title_overlay != blank %}
+          <h2
+            class="pxs-image-with-text-heading"
+          >
+            {{ block.settings.title_overlay | escape }}
+          </h2>
+        {% endif %}
+
+        {% if block.settings.text_overlay != blank %}
+          <div
+            class="pxs-image-with-text-subheading rte"
+          >
+            {{ block.settings.text_overlay }}
+          </div>
+          {% else %}
+          <div class="pxs-image-with-text-subheading rte">
+            {{ block.settings.code }}
+          </div>
+        {% endif %}
+
+        {% if block.settings.button_text_overlay != blank %}
+          <span class="pxs-image-with-text-button">
+            {{ block.settings.button_text_overlay | escape }}
+          </span>
+        {% endif %}
+
+        {% if block.settings.link_overlay != blank %}
+          <a
+            class="pxs-image-with-text-link"
+            href="{{ block.settings.link_overlay }}"
+          ></a>
+        {% endif %}
+        </div>
+    </div>
+  </div>
+</section>
+{% endif %}

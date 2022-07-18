@@ -1,0 +1,281 @@
+<!doctype html>
+<html class="no-js">
+  
+  <head>
+    <meta charset="utf-8">
+<meta name="google-site-verification" content="v1LINR9TfbiRtipY-NKZ02fNLFamUoSNSwM8l0fVZhs" />
+    <meta name="facebook-domain-verification" content="a9ospjhfvqkuwpb2swn3u25opt59ty" />
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MBMB699');</script>
+<!-- End Google Tag Manager -->
+    <meta name="p:domain_verify" content="56da1018ee5fe6baa5b579e873b25be9"/>
+    <title>
+      {{- page_title -}}
+
+      {%- if current_tags -%}
+        {%- assign meta_tags = current_tags | join: ', ' %}
+        {{ 'title.tags' | t: tags: meta_tags -}}
+      {%- endif -%}
+
+      {%- if current_page != 1 -%}
+        {{- 'title.page' | t: page: current_page -}}
+      {%- endif -%}
+
+      {%- unless page_title contains shop.name -%}
+        {{- 'title.shop' | t: shop: shop.name -}}
+      {%- endunless -%}
+    </title>
+
+    {% if page_description != blank %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+
+    {% if settings.favicon != blank %}
+      <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+    {% endif %}
+
+    {% if template contains 'collection' and current_tags %}
+      <meta name="robots" content="noindex" />
+      <link rel="canonical" href="{{ shop.url }}{{ collection.url }}" />
+    {% else %}
+      <link rel="canonical" href="{{ canonical_url }}" />
+    {% endif %}
+
+    <meta name="viewport" content="width=device-width">
+
+    {%
+      include 'social-meta-tags',
+      twitter_handle: settings.twitter_handle
+    %}
+
+    <script>
+      document.documentElement.className=document.documentElement.className.replace(/\bno-js\b/,'js');
+      if(window.Shopify&&window.Shopify.designMode)document.documentElement.className+=' in-theme-editor';
+    </script>
+
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
+    {% include 'google-fonts', fonts: 'font_title|font_body|font_label' %}
+
+    {{ content_for_header }}
+    
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+				
+
+    
+    
+    
+  
+  {% render 'shogun-head' %}
+ 
+{% render 'pagefly-header' %}
+ 
+{% render 'gsf-conversion-pixels' %}
+</head> 
+  
+  
+  
+<style>
+  
+  
+  /* =================== NEW CSS==================== */ 
+  
+  .slideshow.slideshow-slides-3.flickity-enabled {
+    height: 450px;
+}
+ 
+main.site-main label, main.site-main #quantity {
+    display: none;
+} 
+  @media screen and (min-width: 960px){
+.collection-header-no-image .collection-header-info {
+    width: 100%;
+    padding: 0;
+}
+  }
+  
+    @media screen and (max-width: 986px){
+  .collection-header-no-image .collection-header-info {
+    padding: 0 !important;
+  }
+    }
+  
+  
+  #coming-soon .site-footer-item.site-footer-nav,
+  #coming-soon .payment,
+  #coming-soon #shopify-section-static-header,
+  #coming-soon .pxs-announcement-bar{
+    display: none;
+}
+ 
+body#coming-soon {
+    background: #fff;
+    color: #000;
+    background: url();
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ #coming-soon  .masthead-title,  
+  #coming-soon .newsletter-input::placeholder,  
+  #coming-sooninput.newsletter-input {
+    color: #000;
+}
+ #coming-soon  article.page {
+    height: 60vh;
+    padding-top: 10%;
+}
+  
+ #coming-soon  .share-buttons {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 0px;
+    vertical-align: middle;
+    background: #000000c7;
+    padding: 8px;
+    border-radius: 10px;
+}
+   #coming-soon .site-footer {
+    display: block;
+}
+   #coming-soon .site-footer-social {
+    display: block;
+    align-items: center;
+    justify-content: space-between;
+    width: 57%;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    margin: auto;
+}
+ #coming-soon  .site-footer .social {
+    display: none;
+}
+  #coming-soon   .site-footer-item.site-footer__payment-cross-border {
+    display: none;
+}
+ #coming-soon   .credits {
+    display: none;
+}
+
+  
+ #coming-soon .site-footer-item {
+    border: 0;
+}
+  
+  header.collection-header {
+    display: none;
+}
+  img.top-sub-header {
+    width: 100%;
+}
+
+#shopify-section-1596717716872 {
+    margin: 0;
+    padding-bottom: 0;
+}
+  #shopify-section-1596717716872 section {
+    padding: 20px 0;
+}
+  
+  
+ 
+</style>
+  
+ 
+  
+  
+  <body class="page-template-{{ template | replace: '_', '-' }}  "   id="{{ page_title | handleize }}" class={{ template }}{% if template == "product" %} {{ product.handle }}{% endif %}">
+     
+   <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBMB699"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+   {% if template contains 'password' %}
+      <main class="site-main">
+        {{ content_for_layout }}
+      </main>
+    {% else %}
+      {% section 'pxs-announcement-bar' %}
+      {% section 'static-header' %}
+      {% include 'header-minicart' %}
+      {% section 'static-contactbar' %}
+
+      <main class="site-main">
+        {{ content_for_layout }}
+      </main>
+
+      {% section 'site-footer' %}
+    {% endif %}
+
+    {%- if template contains 'cart' -%}
+      {{ '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js' | script_tag }}
+      {{ '/services/javascripts/countries.js' | script_tag }}
+      {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+    {%- endif -%}
+
+    {%- if template contains 'customer' -%}
+      {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+      {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
+    {%- endif -%}
+
+    {% comment %}theme-object{% endcomment %}
+    <script>
+      window.Theme = window.Theme || {};
+      window.Theme.moneyFormat = {{ shop.money_format | strip_html | json }};
+      window.Theme.shippingCalcErrorMessage = "{{ 'cart.shipping_calculator.error' | t | strip_newlines | replace: '"','\\"' }}";
+      window.Theme.shippingCalcMultiRates = "{{ 'cart.shipping_calculator.rates_html' | t | strip_newlines | replace: '"','\\"' }}";
+      window.Theme.shippingCalcOneRate = "{{ 'cart.shipping_calculator.rate' | t | strip_newlines | replace: '"','\\"' }}";
+      window.Theme.shippingCalcNoRates = "{{ 'cart.shipping_calculator.no_rates' | t | strip_newlines | replace: '"','\\"' }}";
+      window.Theme.shippingCalcRateValues = "{{ 'cart.shipping_calculator.rate_values_html' | t | strip_newlines | replace: '"','\\"' }}";
+      window.Theme.routes = {
+        "root_url": "{{ routes.root_url }}",
+        "account_url": "{{ routes.account_url }}",
+        "account_login_url": "{{ routes.account_login_url }}",
+        "account_logout_url": "{{ routes.account_logout_url }}",
+        "account_register_url": "{{ routes.account_register_url }}",
+        "account_addresses_url": "{{ routes.account_addresses_url }}",
+        "collections_url": "{{ routes.collections_url }}",
+        "all_products_collection_url": "{{ routes.all_products_collection_url }}",
+        "search_url": "{{ routes.search_url }}",
+        "cart_url": "{{ routes.cart_url }}",
+        "cart_add_url": "{{ routes.cart_add_url }}",
+        "cart_change_url": "{{ routes.cart_change_url }}",
+        "cart_clear_url": "{{ routes.cart_clear_url }}",
+        "product_recommendations_url": "{{ routes.product_recommendations_url }}",
+      };
+    </script>
+
+    <script
+      src="{{ 'handy.js' | asset_url }}"
+      data-scripts
+      data-shopify-api-url="{{ 'api.jquery.js' | shopify_asset_url }}"
+      data-shopify-cart-url="{{ 'jquery.cart.js' | asset_url }}"
+      data-shopify-currencies="//cdn.shopify.com/s/javascripts/currencies.js"
+      data-shopify-qrcode="{{ 'vendor/qrcode.js' | shopify_asset_url }}"
+    ></script>
+
+    {% include 'structured-data' %}
+
+    <script>
+      (function () {
+        function handleFirstTab(e) {
+          if (e.keyCode === 9) { // the "I am a keyboard user" key
+            document.body.classList.add('user-is-tabbing');
+            window.removeEventListener('keydown', handleFirstTab);
+          }
+        }
+        window.addEventListener('keydown', handleFirstTab);
+      })();
+    </script>
+    
+
+    
+  </body>
+</html>
+                                                              
+                                                              {% render 'afterpay' %}

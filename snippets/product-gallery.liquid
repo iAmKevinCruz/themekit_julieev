@@ -1,0 +1,207 @@
+{% comment %}
+  @param product {Product}
+    The product object in question
+
+  @param selected_media {Media}
+    The current selected media in the gallery
+
+  @param layout {String}
+    The viewport layout and the relative position of the thumbnails
+
+  @param lazy_load {bool}
+    Whether to lazy load the images
+{% endcomment %}
+
+<div
+  class="product-gallery"
+  data-product-gallery
+  data-product-gallery-layout="{{ layout }}"
+  {% if enable_image_zoom %}data-product-gallery-image-zoom{% endif %}
+>
+  <div
+    class="
+      product-gallery--viewport
+      {% if gallery_layout != 'list' and product.media.size > 1 %}product-gallery--viewport--has-navigation{% endif %}
+    "
+    data-product-gallery-viewport
+  >
+    {% assign first_model = models | first %}
+    {% for media in product.media %}
+      <figure
+        class="product-gallery--viewport--figure"
+        tabindex="-1"
+        {% if layout != list %}
+        {% if selected_media.id != media.id %}
+          aria-hidden="true"
+        {% else %}
+          aria-hidden="false"
+        {% endif %}
+        {% endif %}
+        data-product-gallery-figure="{{ forloop.index0 }}"
+        data-product-gallery-selected="{%- if selected_media.id == media.id -%}true{%- else -%}false{%- endif -%}"
+        data-media="{{ media.id }}"
+        data-media-type="{{ media.media_type }}"
+        {% if media.media_type == 'image' and gallery_layout == 'list' %}
+          data-product-gallery-image-zoom
+        {% endif %}
+      >
+        {% case media.media_type %}
+        {% when 'image' %}
+          {%
+            include 'rimg',
+            img: media.preview_image,
+            size: '1050x',
+            scale: 1.5,
+            lazy: true
+          %}
+        {% when 'model' %}
+          <div class="product-gallery--model-wrapper">
+            {{ media | model_viewer_tag: image_size: '1024x', reveal: 'interaction' , toggleable: true, interaction-prompt-threshold: 0 }}
+          </div>
+        {% when 'video' %}
+          {{ media | media_tag: image_size: '1024x' }}
+        {% when 'external_video' %}
+          {{ media | media_tag: image_size: '1024x' }}
+        {% else %}
+          {{ media | media_tag }}
+        {% endcase %}
+      {% if media.media_type == 'model' %}
+        {% assign model = media %}
+      {% else %}
+        {% assign model = first_model %}
+      {% endif %}
+      </figure>
+    {% else %}
+      <figure
+          class="product-gallery--viewport--figure"
+          data-product-gallery-selected="true"
+        >
+        {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      </figure>
+    {% endfor %}
+
+    {% if enable_image_zoom %}
+      {% assign images = product.media | where: "media_type", "image"  %}
+      {% include 'photoswipe', images: images %}
+    {% endif %}
+  </div>
+
+  {% assign first_model = product.media | where: "media_type", "model" | first %}
+  {% if selected_media.media_type == 'model' %}
+    {% assign model = selected_media %}
+  {% else %}
+    {% assign model = first_model %}
+  {% endif %}
+  {% if model %}
+    <script>
+      window.ShopifyXR=window.ShopifyXR||function(){(ShopifyXR.q=ShopifyXR.q||[]).push(arguments)}
+      {% assign models = product.media | where: 'media_type', 'model' | json %}
+      ShopifyXR('addModels', {{ models }});
+    </script>
+    <button
+      class="product-gallery--viewinyourspace"
+      data-default-model-id="{{ first_model.id }}"
+      data-shopify-xr
+      data-shopify-model3d-id="{{ model.id }}"
+      data-shopify-title="{{ product.title }}"
+      data-shopify-xr-hidden
+    >
+      {% include 'icon', id: '3D' %}
+      {{ 'product.media.view_in_your_space' | t }}
+    </button>
+  {% endif %}
+
+  {% if product.media.size > 1 %}
+    <div
+      class="product-gallery--navigation"
+      data-product-gallery-navigation
+      data-product-gallery-navigation-layout="{% if gallery_layout == 'list' %}pagination{% else %}thumbnails{% endif %}"
+    >
+      {% if gallery_layout == 'list' %}
+        <button
+          class="product-gallery--navigation--previous"
+          type="button"
+          data-product-gallery-navigation-previous
+        >
+          {%- include 'icon', id: 'big-arrow' -%}
+        </button>
+      {% endif %}
+
+      {% capture pagination %}
+        {% for media in product.media %}
+          <button
+            class="
+              product-gallery--media-thumbnail
+              product-gallery--{{ media.media_type }}-thumbnail
+            "
+            type="button"
+            tab-index="0"
+            aria-label="{{ 'product.media.thumbnail' | t: title: media.alt }}"
+            data-product-gallery-thumbnail="{{ forloop.index0 }}"
+            data-product-gallery-selected="{%- if selected_media.id == media.id -%}true{%- else -%}false{%- endif -%}"
+            data-media="{{ media.id }}"
+            data-media-type="{{ media.media_type }}"
+          >
+            {% unless gallery_layout == 'list' %}
+              {%
+                include 'rimg'
+                img: media.preview_image,
+                size: '100x100',
+                lazy: true
+              %}
+
+              {% case media.media_type %}
+              {% when 'model' %}
+                {% include 'icon', id: 'model-thumb' %}
+              {% when 'video' %}
+                {% include 'icon', id: 'play-thumb' %}
+              {% when 'external_video' %}
+                {% include 'icon', id: 'play-thumb' %}
+              {% endcase %}
+            {% endunless %}
+          </button>
+        {% endfor %}
+      {% endcapture %}
+
+      {% if gallery_layout == 'list' %}
+        <div class="product-gallery--pagination-wrapper">
+          {{ pagination }}
+        </div>
+      {% else %}
+        <div
+          class="product-gallery--navigation-scroller"
+          data-product-gallery-navigation-scroller
+        >
+          {{ pagination }}
+        </div>
+      {% endif %}
+
+      {% if gallery_layout == 'list' %}
+          <button
+            class="product-gallery--navigation--next"
+            type="button"
+            data-product-gallery-navigation-next
+          >
+            {%- include 'icon', id: 'big-arrow' -%}
+          </button>
+      {% else %}
+        <div class="product-gallery--navigation--buttons">
+          <button
+            class="product-gallery--navigation--scroll-up"
+            type="button"
+            data-product-gallery-navigation-scroll-up
+          >
+            {%- include 'icon', id: 'big-arrow' -%}
+          </button>
+          <button
+            class="product-gallery--navigation--scroll-down"
+            type="button"
+            data-product-gallery-navigation-scroll-down
+          >
+            {%- include 'icon', id: 'big-arrow' -%}
+          </button>
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+</div>

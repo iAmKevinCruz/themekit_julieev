@@ -1,0 +1,120 @@
+{% if section.settings.title != blank %}
+  <a class="pxs-image-with-text-button" href="{{ section.settings.url }}"{% if section.settings.new %} target="_blank"{% endif %}>
+    {{ section.settings.title }}
+  </a>
+  <style>
+    div#shopify-section-{{ section.id }} {
+      text-align: {{ section.settings.alignment }};
+      padding: {{ section.settings.padding }}px 0;
+    }
+    div#shopify-section-{{ section.id }}>a.pxs-image-with-text-button {
+      background: {{ section.settings.bg }};
+      color: {{ section.settings.text }};
+      border: 1px solid {{ section.settings.border }};
+      border-radius: {{ section.settings.corners }}px;
+      transition: .5s;
+      margin: 0;
+    }
+    div#shopify-section-{{ section.id }}>a.pxs-image-with-text-button:hover {
+      background: {{ section.settings.bgh }};
+      color: {{ section.settings.texth }};
+      border-color: {{ section.settings.borderh }};
+    }
+  </style>
+{% endif %}
+{% schema %}
+{
+  "name": "Button",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Button title"
+    },
+	{
+      "type": "url",
+      "id": "url",
+      "label": "Button link"
+    },
+	{
+      "type": "checkbox",
+      "id": "new",
+      "label": "Open link in a new tab"
+    },
+	{
+      "type": "radio",
+      "id": "alignment",
+      "label": "Video alignment",
+      "options": [
+		{ "label": "Center", "value": "center" },
+        { "label": "Left", "value": "left" },
+        { "label": "Right", "value": "right" }
+      ],
+      "default": "center"
+    },
+	{
+	  "type": "range",
+      "id": "padding",
+      "label": "Top/bottom padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 10,
+	  "unit": "px"
+    },
+	{
+      "type": "color",
+      "id": "bg",
+      "label": "Button color",
+	  "default": "#1d7383"
+    },
+	{
+      "type": "color",
+      "id": "text",
+      "label": "Button text color",
+	  "default": "#f1f7f6"
+    },
+	{
+      "type": "color",
+      "id": "border",
+      "label": "Button border color",
+	  "default": "#1d7383"
+    },
+	{
+	  "type": "range",
+      "id": "corners",
+      "label": "Corners rounding",
+      "min": 0,
+      "max": 25,
+      "step": 1,
+      "default": 0,
+	  "unit": "px"
+    },
+	{
+      "type": "color",
+      "id": "bgh",
+      "label": "Button hover color",
+	  "default": "#f1f7f6"
+    },
+	{
+      "type": "color",
+      "id": "texth",
+      "label": "Button hover text color",
+	  "default": "#1d7383"
+    },
+	{
+      "type": "color",
+      "id": "borderh",
+      "label": "Button hover border color",
+	  "default": "#1d7383"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Store information",
+      "name": "Button"
+    }
+  ]
+}
+
+{% endschema %}

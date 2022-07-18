@@ -1,0 +1,214 @@
+<script
+  type="application/json"
+  data-section-type="static-cart"
+  data-section-id="{{ section.id }}"
+  data-section-data>
+  {
+    "button_update_shipping_title": {{ 'cart.button_update_shipping_title' | t | json }},
+    "button_update_shipping_disabled_title": {{ 'cart.button_update_shipping_disabled_title' | t | json }},
+    "customer_logged_in": {%- if customer -%}true{%- else -%}false{%- endif -%}
+  }
+</script>
+
+<h1 class="cart-title">{{ 'cart.title' | t }}</h1>
+<h2 class="cart-empty-message{% if cart.items.size != 0 %} cart-empty-message-hidden{% endif %}" data-cart-empty-message>{{ 'cart.empty' | t }}</h2>
+
+<form class="cart-form{% if cart.items.size == 0 %} cart-empty{% endif %}" action="{{ routes.cart_url }}" method="post" data-cart-form>
+  <section class="cart-items" data-cart-items>
+    {%- for item in cart.items -%}
+      {%- include 'cart-item', item: item -%}
+    {%- endfor -%}
+  </section>
+
+
+  <section class="cart-note" style="{%- unless section.settings.show_notes -%}display: none;{%- endunless -%}">
+    <textarea
+              class="cart-note-content dummy-cart-note"
+              placeholder="{{ section.settings.notes_placeholder }}"
+              aria-label="{{ 'cart.notes' | t }}"></textarea>
+  </section>
+
+  <section class="cart-note" style="display: none;">
+    <textarea
+              class="cart-note-content"
+              name="note"
+              id="cart-note-content"
+              placeholder="{{ section.settings.notes_placeholder | escape }}"
+              aria-label="{{ 'cart.notes' | t }}" style="display: none;"  >{{ cart.note }}</textarea>
+  </section>
+  
+
+  <section class="cart-totals">
+    <div class="cart-discounts" data-cart-discounts>
+      {% for discount_application in cart.cart_level_discount_applications %}
+        <div class="cart-discount">
+          <span class="cart-discount-title">
+            {%- include 'icon', id: 'sale-tag', class: 'cart-discount-sale-tag' -%}
+            {{ discount_application.title }}
+          </span>
+
+          <span class="cart-discount-amount">
+            -<span class="money">{{ discount_application.total_allocated_amount | money }}</span>
+          </span>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="cart-total-row">
+      <span class="cart-total-row-title">{{ 'cart.totals.subtotal_title' | t }}</span>
+      <span class="cart-total-row-value money" data-cart-subtotal>{{ cart.total_price | money }}</span>
+    </div>
+
+    {% unless section.settings.enable_menu_form %}
+      {% include 'shipping-calculator', inline: true %}
+    {% endunless %}
+    
+    <div class="cart-donate-section">
+      
+      <div class="select-option-wrapper">
+        <input type="checkbox" id="enabledonate" name="enabledonate" value="enabledonate" checked>
+        <label for="enabledonate" class="show">
+          {{section.settings.select_company_title}}
+        </label>
+      </div>
+      
+      {% if section.settings.company1 != blank %}
+      <div class="option-wrapper">
+        <input type="radio" id="company1" name="company" value="{{section.settings.company1}}" checked>
+        <label for="company1" class="show">{{section.settings.company1}}</label>
+      </div>
+      {% endif %}
+      
+      {% if section.settings.company2 != blank %}
+      <div class="option-wrapper">  
+        <input type="radio" id="company2" name="company" value="{{section.settings.company2}}">
+        <label for="company2" class="show">{{section.settings.company2}}</label>
+      </div>
+      {% endif %}
+      
+      {% if section.settings.company3 != blank %}
+      <div class="option-wrapper">  
+        <input type="radio" id="company3" name="company" value="{{section.settings.company3}}">
+        <label for="company3" class="show">{{section.settings.company3}}</label>
+      </div>
+      {% endif %}
+
+      {% if section.settings.company4 != blank %}
+      <div class="option-wrapper">  
+        <input type="radio" id="company4" name="company" value="{{section.settings.company4}}">
+        <label for="company4" class="show">{{section.settings.company4}}</label>
+      </div>
+      {% endif %}
+
+      {% if section.settings.company5 != blank %}
+      <div class="option-wrapper">  
+        <input type="radio" id="company5" name="company" value="{{section.settings.company5}}">
+        <label for="company5" class="show">{{section.settings.company5}}</label>
+      </div>
+      {% endif %}
+      
+    </div>
+
+    {% if section.settings.enable_menu_form %}
+      <noscript>
+    {% endif %}
+      <button
+        class="cart-totals-checkout"
+        type="submit"
+        name="checkout">
+        {% if section.settings.enable_checkout_lock_icon %}
+          {% include 'icon',
+            id: 'checkout-lock',
+          %}
+        {% endif %}
+        <span>{{ 'cart.button_checkout_title' | t }}</span>
+      </button>
+    {% if section.settings.enable_menu_form %}
+      </noscript>
+    {% endif %}
+
+    
+  </section>
+
+  {% if section.settings.enable_menu_form %}
+    {%- include 'cart-menu' -%}
+  {% endif %}
+ 
+</form>
+
+{% schema %}
+{
+  "name": "Cart page",
+  "class": "section-cart",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_checkout_lock_icon",
+      "label": "Show lock icon on checkout button",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_menu_form",
+      "label": "Enable bottom menu",
+      "default": true,
+      "info": "Displays shipping calculator and checkout in a sticky bottom menu."
+    },
+    {
+      "id": "show_notes",
+      "type": "checkbox",
+      "label": "Show notes",
+      "default": true
+    },
+    {
+      "id": "notes_placeholder",
+      "type": "text",
+      "label": "Notes placeholder text",
+      "default": "Write any special instructions for your shipment here"
+    },
+    {
+      "id": "shipping_calculator_default_country",
+      "type": "text",
+      "label": "Shipping calculator default country",
+      "default": "United States"
+    },
+	{
+      "id": "select_company_title",
+      "type": "textarea",
+      "label": "Select Company title - For donation",
+      "default": "I would like 10% of the profit to go as a donation to one of the organization from our list"
+    },
+	{
+      "id": "company1",
+      "type": "textarea",
+      "label": "organization1",
+      "default": "organization1"
+    },
+	{
+      "id": "company2",
+      "type": "textarea",
+      "label": "organization2",
+      "default": "organization2"
+    },
+	{
+      "id": "company3",
+      "type": "textarea",
+      "label": "organization3",
+      "default": "organization3"
+    },
+	{
+      "id": "company4",
+      "type": "textarea",
+      "label": "organization4",
+      "default": "organization4"
+    },
+	{
+      "id": "company5",
+      "type": "textarea",
+      "label": "organization5",
+      "default": "organization5"
+    }
+  ]
+}
+
+{% endschema %}

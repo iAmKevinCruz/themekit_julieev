@@ -1,0 +1,9 @@
+<!-- this is the file we need to duplicate and will copy content and rename it as page.custom-name.liquid -->
+
+<article class="page">
+  {% include 'masthead', title: page.title %}
+
+  <div class="multi-content">
+	{% section 'multi-section-table' %}
+  </div>
+</article>

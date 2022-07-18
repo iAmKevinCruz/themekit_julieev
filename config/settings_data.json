@@ -1,0 +1,1608 @@
+{
+  "current": {
+    "quickshop_enable_cart_redirection": false,
+    "quickshop_show_payment_button": true,
+    "quickshop_enable_menu_form": false,
+    "quickshop_gallery_layout": "list",
+    "quickshop_gallery_video_autoplay": true,
+    "quickshop_gallery_video_looping": true,
+    "quickshop_gallery_position": "left",
+    "favicon": "shopify:\/\/shop_images\/JE-fav.png",
+    "color_background": "#fafafa",
+    "color_accent": "#1d7383",
+    "use_highlighted_menu": true,
+    "color_title_text": "#0d0d0d",
+    "color_text": "#021526",
+    "color_button_text": "#f1f7f6",
+    "font_title": "archivo_narrow_n4",
+    "font_body": "assistant_n4",
+    "font_label": "assistant_n4",
+    "social_default_image": "",
+    "social_facebook": "https:\/\/www.facebook.com\/JulieandEv",
+    "social_twitter": "",
+    "social_pinterest": "",
+    "social_instagram": "https:\/\/instagram.com\/julieandev",
+    "social_vimeo": "",
+    "social_youtube": "",
+    "social_medium": "",
+    "social_rss": "",
+    "social_email": "info@julieandev.com",
+    "share_widget_facebook": true,
+    "share_widget_twitter": true,
+    "share_widget_pinterest": true,
+    "share_widget_email": true,
+    "checkout_header_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/JE-text_edda36c8-06cf-4bf6-aadc-6236c84ad8d5.png",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#1d7383",
+    "checkout_button_color": "#ccedf3",
+    "checkout_error_color": "#e32c2b",
+    "sections": {
+      "section-1": {
+        "type": "dynamic-slideshow",
+        "blocks": {
+          "slide-1": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/rattan_pitchers.png",
+              "layout": "full-width-left",
+              "text_color": "#f1f7f6",
+              "title": "Glassware",
+              "text": "",
+              "link": "shopify:\/\/collections\/table-linens",
+              "link_text": ""
+            }
+          },
+          "slide-2": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/tabletop3.png",
+              "layout": "full-width-left",
+              "text_color": "#ffffff",
+              "title": "Tabletop",
+              "text": "",
+              "link": "shopify:\/\/collections\/drinkware",
+              "link_text": ""
+            }
+          },
+          "slide-3": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/table_linen.png",
+              "layout": "full-width-center",
+              "text_color": "#1d7383",
+              "title": "Table Linens",
+              "text": "",
+              "link": "shopify:\/\/collections\/tabletop",
+              "link_text": ""
+            }
+          }
+        },
+        "block_order": [
+          "slide-1",
+          "slide-2",
+          "slide-3"
+        ],
+        "settings": {
+          "should_autoplay": true,
+          "slide_autoplay": 4
+        }
+      },
+      "section-3": {
+        "type": "dynamic-featured-products",
+        "settings": {
+          "title": "",
+          "collection": "new-arrivals",
+          "product_item_style": "natural",
+          "enable_image_crop": false,
+          "product_grid_show_second_image": true,
+          "enable_product_quickshop": false,
+          "products-row-count": 1,
+          "products-per-row": 4,
+          "product_emphasize": false
+        }
+      },
+      "static-header": {
+        "type": "static-header",
+        "blocks": {
+          "538e670c-86fa-47c1-a2de-3813dc0acf5e": {
+            "type": "mega_menu",
+            "settings": {
+              "menu_item": "",
+              "menu_collection_images": false
+            }
+          },
+          "bd7414bb-0616-46e7-a0f3-27e0eebbfeba": {
+            "type": "topmenu",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/julie_logo.png",
+              "text": "",
+              "link": "http:\/\/julieandev.com",
+              "tab": false
+            }
+          },
+          "c15ea0a5-e7e7-4476-8ed4-077cc4b62836": {
+            "type": "topmenu",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/LOGOBACKGROWN.jpg",
+              "text": "",
+              "link": "http:\/\/juliepaulinodesign.com",
+              "tab": true
+            }
+          },
+          "8f6ede50-ebbe-46af-94e5-f413043d76ea": {
+            "type": "topmenu",
+            "settings": {
+              "text": "Belle Vivir Blog",
+              "link": "http:\/\/bellevivir.com",
+              "tab": true
+            }
+          }
+        },
+        "block_order": [
+          "538e670c-86fa-47c1-a2de-3813dc0acf5e",
+          "bd7414bb-0616-46e7-a0f3-27e0eebbfeba",
+          "c15ea0a5-e7e7-4476-8ed4-077cc4b62836",
+          "8f6ede50-ebbe-46af-94e5-f413043d76ea"
+        ],
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/JE-text.png",
+          "logo_width": "",
+          "mobile_logo_width": "",
+          "menu": "main-menu"
+        }
+      },
+      "site-footer": {
+        "type": "site-footer",
+        "blocks": {
+          "customer": {
+            "type": "customer",
+            "settings": {
+              "title": "Account"
+            }
+          },
+          "1599248067148": {
+            "type": "menu",
+            "settings": {
+              "menu": "footer"
+            }
+          },
+          "1595424361810": {
+            "type": "menu",
+            "settings": {
+              "menu": "customer-service"
+            }
+          },
+          "1596804790812": {
+            "type": "menu",
+            "settings": {
+              "menu": "foot-menu"
+            }
+          },
+          "2b3ec662-05a2-44ab-a688-a64dc120ed5b": {
+            "type": "menu",
+            "settings": {
+              "menu": "interior-design"
+            }
+          }
+        },
+        "block_order": [
+          "customer",
+          "1599248067148",
+          "1595424361810",
+          "1596804790812",
+          "2b3ec662-05a2-44ab-a688-a64dc120ed5b"
+        ],
+        "settings": {
+          "enable_newsletter": true,
+          "enable_social": true,
+          "enable_payment_icons": true,
+          "show_locale_selector": true,
+          "show_currency_selector": true
+        }
+      },
+      "static-collection": {
+        "type": "static-collection",
+        "settings": {
+          "enable_menu_form": false,
+          "products_pagination_method": "infinite_scroll",
+          "products-per-page": 12,
+          "products-per-row": 4,
+          "product_item_style": "medium",
+          "enable_image_crop": false,
+          "product_grid_show_second_image": true,
+          "enable_product_quickshop": false,
+          "show_product_vendors": false
+        }
+      },
+      "static-product": {
+        "type": "static-product",
+        "settings": {
+          "enable_menu_form": false,
+          "show_product_vendor": true,
+          "enable_cart_redirection": false,
+          "show_payment_button": true,
+          "gallery_layout": "gallery-left",
+          "gallery_video_autoplay": true,
+          "gallery_video_looping": true,
+          "gallery_position_desktop": "left",
+          "gallery_position_mobile": "above_title",
+          "enable_social_sharing": true
+        }
+      },
+      "static-article": {
+        "type": "static-article",
+        "settings": {
+          "enable_social_sharing": true,
+          "title": "Featured collection",
+          "product_item_style": "natural",
+          "enable_image_crop": false,
+          "product_grid_show_second_image": true,
+          "enable_product_quickshop": false,
+          "products-per-row": 5,
+          "blogtitle": "Related articles"
+        }
+      },
+      "pxs-announcement-bar": {
+        "type": "pxs-announcement-bar",
+        "settings": {
+          "show_announcement": true,
+          "announcement_home_only": false,
+          "announcement_text": "SHOP NEW ARRIVALS",
+          "announcement_text_mobile": "SHOP NEW ARRIVALS",
+          "announcement_link": "shopify:\/\/collections\/new-arrivals",
+          "announcement_color": "#064551",
+          "announcement_background": "#ccedf3"
+        }
+      },
+      "static-contactbar": {
+        "type": "static-contactbar",
+        "settings": {
+          "trigger": "",
+          "phone_value": "+1 9177214406",
+          "email_value": "info@julieandev.com",
+          "hours_value": "<p>Mon-Fri, 9am-5pm<\/p>",
+          "directions_value": "<p>Dublin, Ohio, 43017<\/p>",
+          "directions_map": false,
+          "api_key": "",
+          "directions-map-zoom": 2,
+          "directions_map_color_fg": "#292929",
+          "directions_map_color_bg": "#ffffff"
+        }
+      },
+      "static-product-recommendations": {
+        "type": "static-product-recommendations",
+        "settings": {
+          "show_product_recommendations": true,
+          "product_recommendations_heading": "You may also like",
+          "product_item_style": "natural",
+          "enable_image_crop": false,
+          "enable_product_quickshop": false,
+          "product_limit": 5,
+          "product_emphasize": true
+        }
+      },
+      "static-cart": {
+        "type": "static-cart",
+        "settings": {
+          "enable_checkout_lock_icon": true,
+          "enable_menu_form": false,
+          "show_notes": true,
+          "notes_placeholder": "Write any special instructions for your shipment here",
+          "shipping_calculator_default_country": "United States",
+          "select_company_title": "I would like 10% of the profit to go as a donation to one of the organizations from our list",
+          "company1": "Clean Air Task Force",
+          "company2": "Prevent Child Abuse America",
+          "company3": "Water.org",
+          "company4": "",
+          "company5": ""
+        }
+      },
+      "static-blog": {
+        "type": "static-blog",
+        "settings": {
+          "posts-per-page": 4
+        }
+      },
+      "static-password": {
+        "type": "static-password",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/JE_8196879e-36c1-409f-884f-00d97dd9bbac.png",
+          "show_newsletter_signup": true,
+          "newsletter_title": "Subscribe",
+          "newsletter_text": ""
+        }
+      },
+      "static-list-collections": {
+        "type": "static-list-collections",
+        "settings": {
+          "collections-per-page": 9,
+          "collection_item_display_description": false
+        }
+      },
+      "1597264283837": {
+        "type": "pxs-image-with-text-overlay",
+        "settings": {
+          "section_height": "medium",
+          "image": "shopify:\/\/shop_images\/Julie_and_Ev_Product_Shoot_-_Summer_2021-125_copy.jpg",
+          "position": "center center",
+          "title": "Julie's Picks",
+          "text": "<p>Bringing curated pieces from my table to yours.<\/p>",
+          "content_position": "center-center",
+          "color": "#000000",
+          "overlay_background": "#ffffff",
+          "overlay_opacity": 40,
+          "link": "shopify:\/\/collections\/julies-picks",
+          "button_text": "See more"
+        }
+      },
+      "about-image-overlay": {
+        "type": "about-image-overlay",
+        "settings": {
+          "enable_overlay_section": false,
+          "section_height": "medium",
+          "image": "shopify:\/\/shop_images\/Japanese_porcelain_bowls_e82ec150-1bfb-42fd-ba2f-b354d3fc52fe.jpg",
+          "position": "center center",
+          "title": "Welcome to Julie & Ev",
+          "text": "<p>Artisanal craftsmanship from the world to your door.<\/p>",
+          "content_position": "center-center",
+          "color": "#080000",
+          "overlay_background": "#f8f5f5",
+          "overlay_opacity": 23,
+          "link": "",
+          "button_text": ""
+        }
+      },
+      "pxs-rich-text": {
+        "type": "pxs-rich-text",
+        "blocks": {
+          "1599226905381": {
+            "type": "text",
+            "settings": {
+              "title": "Artisanal craftsmanship from the world to your door.",
+              "text": "<p>With over fifteen year's expertise in pinpointing upcoming international interiors trends, Julie\n& Ev are adept at curating the next must-have pieces and presenting them in innovative,\ninspiring ways. We've honed a keen eye for style coupled with a passion for outstanding\nquality to ensure each of our pieces withstands the test of time - in both design and craft.\nWe've made it our mission to help make your home a beautiful and relaxing place to live.<\/p>",
+              "heading_size": "large",
+              "text_alignment": "center"
+            }
+          }
+        },
+        "block_order": [
+          "1599226905381"
+        ],
+        "settings": {
+          "width": "wide"
+        }
+      },
+      "about-text-block": {
+        "type": "about-text-block",
+        "blocks": {
+          "1599493295728": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/tabletopcloseup.jpg",
+              "layout": "left",
+              "title": "What We Do",
+              "text": "<p>❖ Luxury lifestyle and homeware providers.<br>❖ We travel the globe to find things that inspire and excite us.<br>❖ Our mission is to share our discoveries with you.<br>❖ Helping make your home a beautiful and relaxing place to live.<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "1599494219780": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Julie_and_Lucas.png",
+              "layout": "right",
+              "title": "Our Pilosophy",
+              "text": "<p>Underpinning Julie &amp; Ev is a passion for travel and exploration, alongside the determination to make a positive impact. We work with artisans across the globe, combining timeless design with natural materials. Whether it's a designer's distinctive style, a piece's character, or the inspiration behind its origins &mdash; there's continually more to tell than meets the eye.&nbsp; Each item we curate has a story that's made for sharing.<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "1599494314336": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/closetablecreatives.jpg",
+              "layout": "left",
+              "title": "Our Story",
+              "text": "<p>\"As far back as we can remember, we've had a passion for sharing the tastes, sounds, and joys of our travels with our friends and family. In the summer of 2020, we took the first step<br>towards a lifelong dream: to bring a tastefully curated collection to the world.&nbsp; Through our professional work, honesty and integrity were embedded in us, but our parents taught us taste. From them, we learned to be humble and to share our joys with others.<br>From them, we've learned that simplicity and sophistication go hand-in-hand &mdash; in design, craft, and life.<\/p>\n<p>Artisinal goods, hand-made pieces, unique materials, fibers derived from centuries-old know-how are all elements that inspire Julie &amp; Ev today. Whether in glassware, tabletops, or something more remarkable - you'll find these inspirations curated in every item we provide.\" Evren Yenicag, Co-Owner<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "1599494461253": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/mewalking.jpg",
+              "layout": "right",
+              "title": "Beauty Beyond the Visual",
+              "text": "<p>\"Comfort is where the home is, where we genuinely can be ourselves. Beauty goes beyond the visual - how we treat others, how we carry ourselves, and the items with which we surround each other makes a profound difference in our lives. So much of living well and the joy of life is about self-worth. That's why it's crucial to inspire these values in our friends and family, combining moral and social responsibilities and helping them to find grace in the small things. The home is the perfect place for this inspiration.\"<br>Julie Paulino, Co-Owner<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "1599494709384": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/person-prepares-land-to-sow-seeds.jpg",
+              "layout": "left",
+              "title": "Ethics and Responsibility",
+              "text": "<p>The relationship between a creator and their work forms a story that makes each product not a mass-produced item but an exclusively crafted piece. The traditional skills used by our<br>suppliers have been handed down from generation to generation. We value this ancient knowledge, and hope by presenting it to the world, we help to keep it alive &mdash; while bringing daily joy to your home. We&rsquo;re also aware of the hardships faced by people around the world. To help make a positive impact, we offer 10% of our purchasing profit to a charitable organization chosen by you.<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1599493295728",
+          "1599494219780",
+          "1599494314336",
+          "1599494461253",
+          "1599494709384"
+        ],
+        "settings": {}
+      },
+      "about-image-bottom": {
+        "type": "about-image-bottom",
+        "settings": {
+          "enable_overlay_section": true,
+          "section_height": "small",
+          "image": "shopify:\/\/shop_images\/urban-boat-ride.jpg",
+          "position": "center center",
+          "title": "Delight in the Art of the Travel",
+          "text": "<p>Within the collection, you'll find pieces to make a statement and others that effortlessly complement your decor. Each item serves as both a reminder of travels past and to inspire the journeys ahead of you. Thriving on aesthetics and unparalleled craftsmanship, Julie &amp; Ev's collection redefines luxury for the modern home.<\/p>",
+          "content_position": "top-left",
+          "color": "#070000",
+          "overlay_background": "#ffffff",
+          "overlay_opacity": 45,
+          "link": "",
+          "button_text": ""
+        }
+      },
+      "multi-section": {
+        "type": "multi-section",
+        "blocks": {
+          "1599506114025": {
+            "type": "image-overlay-section",
+            "settings": {
+              "enable_overlay_section": true,
+              "section_height": "original",
+              "image_overlay": "shopify:\/\/shop_images\/gift_guide_short.png",
+              "position": "center center",
+              "title_overlay": "",
+              "text_overlay": "",
+              "code": "",
+              "content_position": "top-center",
+              "color": "#080000",
+              "overlay_background": "#f7f4f4",
+              "overlay_opacity": 44,
+              "link_overlay": "",
+              "button_text_overlay": ""
+            }
+          },
+          "77c6173d-57a8-483d-b0c1-f44368230367": {
+            "type": "rich_text",
+            "settings": {
+              "width": "regular",
+              "heading_size": "large",
+              "rt_heading": "",
+              "rt_text": "<p>Finding a perfect gift for a friend, a family member, or a special someone is definitely not an easy feat. Whatever the occasion is, our gift guide is here to assist you in searching for that ultimate gift that your loved ones will surely adore and treasure for the rest of their lives.<\/p><p>Now that the holiday glee is already fast approaching, we will make gift-giving as easy as it is supposed to be.<\/p><p>We have a range of gifts that are narrowed down to different options as we know well that not everyone has the same personality.<\/p>",
+              "text_align": "left"
+            }
+          },
+          "12a6f140-f371-442c-9329-d068734967a1": {
+            "type": "left-right-section",
+            "settings": {
+              "image_l_r": "shopify:\/\/shop_images\/Casa_Nuno_Blue_and_White_Platter.png",
+              "layout": "right",
+              "title_l_r": "Gifts For the Classic",
+              "text_l_r": "<p>Our <a href=\"https:\/\/julieandev.com\/collections\/gifts-for-the-classic\"><span style=\"text-decoration:underline\">Gifts For the Classic<\/span><\/a> provides a real classic setting for those who love timeless tabletop and accessories. This unique collection will surely help you find the perfect piece for your mom, grandma, and friends who love celebrating their classics and embracing their traditional style.<\/p>",
+              "button_label": "Shop gifts for the classic",
+              "button_link_l_r": "shopify:\/\/collections\/gifts-for-the-classic"
+            }
+          },
+          "4ae37ce9-1806-4286-acc0-6bb0880833ee": {
+            "type": "left-right-section",
+            "settings": {
+              "image_l_r": "shopify:\/\/shop_images\/Gold_Footed_Ceramic_Plate.png",
+              "layout": "left",
+              "title_l_r": "Gifts For The Stylish",
+              "text_l_r": "<p>For fashion-forward people, this <a href=\"https:\/\/julieandev.com\/collections\/gifts-for-the-stylish\"><span style=\"text-decoration:underline\">Gifts For the Stylish<\/span><\/a> will be a hit. This collection comprises an array of beautiful items ranging from elegant trays to elegant vases, hand-embroidered napkins. They can instantly and effortlessly make a statement and your stylish friends will surely adore these pieces.<\/p><p>Arrive in full style and select from an array of beautiful items.  Our selection of stylish gifts are guaranteed to leave a long lasting impression. <\/p>",
+              "button_label": "Shop gifts for the stylish",
+              "button_link_l_r": "shopify:\/\/collections\/gifts-for-the-stylish"
+            }
+          },
+          "b1c01b5a-dd28-4e2f-a61c-fe78908b8660": {
+            "type": "left-right-section",
+            "settings": {
+              "image_l_r": "shopify:\/\/shop_images\/Zafferano_tirache_glass_tumbler_assorted_colors.png",
+              "layout": "right",
+              "title_l_r": "Gifts Under $200",
+              "text_l_r": "<p>If you are looking for frugal gifts that offer the same top quality and style, our <a href=\"https:\/\/julieandev.com\/collections\/gifts-under-200\"><span style=\"text-decoration:underline\">Gifts Under $200<\/span><\/a> collection is for you.<\/p><p>These beautiful gifts ideas offer a range of artisanal items ideal for the stylish tastemaker.<\/p>",
+              "button_label": "Shop Gifts under $200",
+              "button_link_l_r": "https:\/\/julieandev.com\/collections\/gifts-under-200"
+            }
+          },
+          "4ed4dc4d-c99c-4c14-b236-c584966e0a6c": {
+            "type": "left-right-section",
+            "settings": {
+              "image_l_r": "shopify:\/\/shop_images\/Handblown_Italian_Tumbler_Glass_with_Black_Dots.png",
+              "layout": "left",
+              "title_l_r": "Gifts For The Minimalist",
+              "text_l_r": "<p>For your friends who love simplicity, find them a beautiful something in our elegant <a href=\"https:\/\/julieandev.com\/collections\/gifts-for-the-minimalist\"><span style=\"text-decoration:underline\">Gifts For the Minimalist<\/span><\/a> collection.<\/p><p>Shop our inspired collection for the minimalist.  Cool finds will make it easy to find the right gift for the selective eye.<\/p>",
+              "button_label": "Shop gifts for the minimalist",
+              "button_link_l_r": "shopify:\/\/collections\/gifts-for-the-minimalist"
+            }
+          },
+          "91c16c29-2029-43a9-a247-074058fb2d2e": {
+            "type": "left-right-section",
+            "settings": {
+              "image_l_r": "shopify:\/\/shop_images\/Wine_Bottle_Holder_in_Abaca_Fiber.png",
+              "layout": "right",
+              "title_l_r": "Gifts For The Host",
+              "text_l_r": "<p>For special events, surprise your hostess or host with the perfect gift in this <a href=\"https:\/\/julieandev.com\/collections\/gifts-for-the-host\"><span style=\"text-decoration:underline\">Gifts For the Host<\/span><\/a> collection. You are guaranteed to be invited again!<\/p><p>Wow your host or hostess with a distinctive gift and be merry together this festive season.  <\/p>",
+              "button_label": "shop gifts for the host",
+              "button_link_l_r": "shopify:\/\/collections\/gifts-for-the-host"
+            }
+          },
+          "113681b6-2491-4f57-88f9-3d47c644258e": {
+            "type": "left-right-section",
+            "settings": {
+              "image_l_r": "shopify:\/\/shop_images\/gift_card.png",
+              "layout": "left",
+              "title_l_r": "Gift Our Gift Card",
+              "text_l_r": "<p>Another great option is to let them choose what they want from our collection and you can offer that by using our <a href=\"https:\/\/julieandev.com\/collections\/tabletop\/products\/julie-ev-gift-card\"><span style=\"text-decoration:underline\">exclusive Gift Card<\/span><\/a>. They will surely find it generous and sweet of you to allow them to choose from our curated must-have artisanal items.<\/p><p>All of the gift items are made with exquisite, intricate, and world-class craftsmanship from artisans across the globe. <\/p><p>Share your brilliant discovery of artisanal crafts and products with the people you love!  From modern items to more traditional ones, the choice is theirs.   <\/p>",
+              "button_label": "Shop Gift Cards",
+              "button_link_l_r": "https:\/\/julieandev.com\/collections\/tabletop\/products\/julie-ev-gift-card"
+            }
+          }
+        },
+        "block_order": [
+          "1599506114025",
+          "77c6173d-57a8-483d-b0c1-f44368230367",
+          "12a6f140-f371-442c-9329-d068734967a1",
+          "4ae37ce9-1806-4286-acc0-6bb0880833ee",
+          "b1c01b5a-dd28-4e2f-a61c-fe78908b8660",
+          "4ed4dc4d-c99c-4c14-b236-c584966e0a6c",
+          "91c16c29-2029-43a9-a247-074058fb2d2e",
+          "113681b6-2491-4f57-88f9-3d47c644258e"
+        ],
+        "settings": {}
+      },
+      "multi-section-about": {
+        "type": "multi-section-about",
+        "blocks": {
+          "1599508818634": {
+            "type": "rich_text",
+            "settings": {
+              "width": "wide",
+              "heading_size": "large",
+              "rt_heading": "Artisanal craftsmanship from the world to your door.",
+              "rt_text": "<p>With over fifteen year&#x27;s expertise in pinpointing upcoming international interiors trends, Julie &amp; Ev are adept at curating the next must-have pieces and presenting them in innovative, inspiring ways. We&#x27;ve honed a keen eye for style coupled with a passion for outstanding quality to ensure each of our pieces withstands the test of time - in both design and craft. We&#x27;ve made it our mission to help make your home a beautiful and relaxing place to live.<\/p>",
+              "text_align": "center"
+            }
+          },
+          "1599508918975": {
+            "type": "left-right-section",
+            "settings": {
+              "image_l_r": "shopify:\/\/shop_images\/closetablecreatives.jpg",
+              "layout": "left",
+              "title_l_r": "What We Do",
+              "text_l_r": "<p>❖ Luxury lifestyle and homeware providers.<br\/>❖ We travel the globe to find things that inspire and excite us.<br\/>❖ Our mission is to share our discoveries with you.<br\/>❖ Helping make your home a beautiful and relaxing place to live.<\/p>",
+              "button_label": "",
+              "button_link_l_r": ""
+            }
+          },
+          "1599508952601": {
+            "type": "left-right-section",
+            "settings": {
+              "image_l_r": "shopify:\/\/shop_images\/Julie_and_Lucas.png",
+              "layout": "right",
+              "title_l_r": "Our Philosophy",
+              "text_l_r": "<p>Underpinning Julie &amp; Ev is a passion for travel and exploration, alongside the determination to make a positive impact. We work with artisans across the globe, combining timeless design with natural materials. Whether it&#x27;s a designer&#x27;s distinctive style, a piece&#x27;s character, or the inspiration behind its origins — there&#x27;s continually more to tell than meets the eye.  Each item we curate has a story that&#x27;s made for sharing.<\/p>",
+              "button_label": "",
+              "button_link_l_r": ""
+            }
+          },
+          "1599508993902": {
+            "type": "left-right-section",
+            "settings": {
+              "image_l_r": "shopify:\/\/shop_images\/Julie_and_Evren_Wedding.png",
+              "layout": "left",
+              "title_l_r": "Our Story",
+              "text_l_r": "<p>&quot;As far back as we can remember, we&#x27;ve had a passion for sharing the tastes, sounds, and joys of our travels with our friends and family. In the summer of 2020, we took the first step towards a lifelong dream: to bring a tastefully curated collection to the world.  Through our professional work, honesty and integrity were embedded in us, but our parents taught us taste.  From them, we learned to be humble and to share our joys with others.  From them, we&#x27;ve learned that simplicity and sophistication go hand-in-hand — in design, craft, and life.<\/p><p>Artisinal goods, hand-made pieces, unique materials, fibers derived from centuries-old know-how are all elements that inspire Julie &amp; Ev today. Whether in glassware, tabletops, or something more remarkable - you&#x27;ll find these inspirations curated in every item we provide.&quot; Evren Yenicag, Co-Owner<\/p>",
+              "button_label": "",
+              "button_link_l_r": ""
+            }
+          },
+          "1599509245815": {
+            "type": "left-right-section",
+            "settings": {
+              "image_l_r": "shopify:\/\/shop_images\/Julie_and_ev.jpg",
+              "layout": "right",
+              "title_l_r": "Beauty Beyond the Visual",
+              "text_l_r": "<p>&quot;Comfort is where the home is, where we genuinely can be ourselves. Beauty goes beyond the visual - how we treat others, how we carry ourselves, and the items with which we surround each other makes a profound difference in our lives. So much of living well and the joy of life is about self-worth. That&#x27;s why it&#x27;s crucial to inspire these values in our friends and family, combining moral and social responsibilities and helping them to find grace in the small things. The home is the perfect place for this inspiration.&quot; Julie Paulino, Designer, Design Consultant and Co-Owner.  For Julie&#x27;s Interior Design portfolio, please visit Julie Paulino Design.<\/p>",
+              "button_label": "",
+              "button_link_l_r": ""
+            }
+          },
+          "ea04970a-48de-4736-af10-0b114077229f": {
+            "type": "left-right-section",
+            "settings": {
+              "image_l_r": "shopify:\/\/shop_images\/full_shot.jpg",
+              "layout": "left",
+              "title_l_r": "PLASTER MIRRORS",
+              "text_l_r": "<p>Mirrors are more than practical objects where you can check how gorgeous you look before going out. When beautifully made and placed, mirrors can amplify light and add a character to any room. That’s especially true if you get mirrors with French-designed plaster frames.<\/p><p>At Julie & Ev, we’re proud to offer gorgeous handcrafted plaster convex mirrors from Paris. Decorative and rich in history, these mirrors can make as much of an impact as a painting.<\/p><p>At Julie & Ev, it’s our lifelong mission to deliver artisanal craftsmanship from the world to your door. Over the years of travel and design experience, we’ve developed a keen eye for style and durability. Trust that these mirrors can withstand the test of time—both in design and craftsmanship. Order your French plaster mirrors today.<\/p>",
+              "button_label": "SHOP PLASTER MIRRORS",
+              "button_link_l_r": "shopify:\/\/collections\/plaster-mirrors"
+            }
+          },
+          "1599509293616": {
+            "type": "image-overlay-section",
+            "settings": {
+              "enable_overlay_section": true,
+              "section_height": "small",
+              "image_overlay": "shopify:\/\/shop_images\/person-prepares-land-to-sow-seeds.jpg",
+              "position": "center center",
+              "title_overlay": "Ethics and Responsibility",
+              "text_overlay": "<p>The relationship between a creator and their work forms a story that makes each product not a mass-produced item but an exclusively crafted piece. The traditional skills used by our suppliers have been handed down from generation to generation. We value this ancient knowledge, and hope by presenting it to the world, we help to keep it alive — while bringing daily joy to your home. We’re also aware of the hardships faced by people around the world. To help make a positive impact, we offer 10% of our purchasing profit to a <a href=\"\/pages\/oganization-we-support\" title=\"Our Values\">charitable organization<\/a> chosen by you.<\/p>",
+              "content_position": "top-center",
+              "color": "#080000",
+              "overlay_background": "#faf7f7",
+              "overlay_opacity": 74,
+              "link_overlay": "",
+              "button_text_overlay": ""
+            }
+          },
+          "1599509428867": {
+            "type": "image-overlay-section",
+            "settings": {
+              "enable_overlay_section": true,
+              "section_height": "medium",
+              "image_overlay": "shopify:\/\/shop_images\/horses-in-the-sea.jpg",
+              "position": "center center",
+              "title_overlay": "Delight in the Art of the Travel",
+              "text_overlay": "<p>Within the <a href=\"\/collections\/dinnerware\" title=\"Dinnerware\">collection<\/a>, you&#x27;ll find pieces to make a statement and others that effortlessly complement your decor. Each item serves as both a reminder of travels past and to inspire the journeys ahead of you. Thriving on aesthetics and unparalleled craftsmanship, Julie &amp; Ev&#x27;s collection redefines luxury for the modern home.<\/p>",
+              "content_position": "top-left",
+              "color": "#080000",
+              "overlay_background": "#000000",
+              "overlay_opacity": 50,
+              "link_overlay": "",
+              "button_text_overlay": ""
+            }
+          }
+        },
+        "block_order": [
+          "1599508818634",
+          "1599508918975",
+          "1599508952601",
+          "1599508993902",
+          "1599509245815",
+          "ea04970a-48de-4736-af10-0b114077229f",
+          "1599509293616",
+          "1599509428867"
+        ],
+        "settings": {}
+      },
+      "multi-section-contact": {
+        "type": "multi-section-contact",
+        "blocks": {
+          "1599571780211": {
+            "type": "rich_text",
+            "settings": {
+              "width": "regular",
+              "heading_size": "large",
+              "rt_heading": "",
+              "rt_text": "<p>Thanks for visiting Julie &amp; Ev.&nbsp; For any inquiries, please contact us below.<\/p>\n<p>For Collaborations please email us at <a href=\"mailto:info@julieandev.com\" title=\"mailto:info@julieandev.com\">info@julieandev.com<\/a>.<\/p>\n<p>Press inquiries:&nbsp; <a href=\"mailto:press@julieandev.com\" title=\"mailto:press@julieandev.com\">press@julieandev.com<\/a><\/p>\n<p>For returns and shipping questions, please refer to our <a href=\"\/pages\/shipping-returns\" title=\"Shipping &amp; Cancellations\">Shipping Policy<\/a> page.<\/p>\n<p>For order inquiries: <a href=\"mailto:orders@julieandev.com\" title=\"mailto:orders@julieandev.com\">orders@julieandev.com<\/a><\/p>\n<p>For more inspiration please follow Julie &amp; Ev on Instagram <a href=\"https:\/\/www.instagram.com\/julieandev\/\">@julieandev<\/a><\/p>",
+              "text_align": "left"
+            }
+          },
+          "1599593062860": {
+            "type": "image-overlay-section",
+            "settings": {
+              "enable_overlay_section": true,
+              "section_height": "medium",
+              "image_overlay": "shopify:\/\/shop_images\/the-kayak-and-the-rock.jpg",
+              "position": "center center",
+              "title_overlay": "Thanks for being here",
+              "text_overlay": "",
+              "code": "",
+              "content_position": "top-center",
+              "color": "#ffffff",
+              "overlay_background": "#000000",
+              "overlay_opacity": 50,
+              "link_overlay": "",
+              "button_text_overlay": ""
+            }
+          }
+        },
+        "block_order": [
+          "1599571780211",
+          "1599593062860"
+        ],
+        "settings": {}
+      },
+      "multi-section-table": {
+        "type": "multi-section-table",
+        "blocks": {
+          "1599574496964": {
+            "type": "rich_text",
+            "settings": {
+              "width": "regular",
+              "heading_size": "large",
+              "rt_heading": "",
+              "rt_text": "<p>Many say that traveling is about the journey, that might be true, however when it comes to visiting new places, for me, it&#x27;s all about the destination. Above all, I have to confess that after taking numerous flights.... I have not overcome my fear of flying. To my defense, it goes against all-natural events. How can a massive motorized machine fly at such a high altitude and at such a fast speed? But why surrender to fear and never see new lands, taste new cuisines, and enjoy new sounds? Fear has never gotten anyone anywhere. You see where I’m getting..? Hence, our curated tailored tables.<\/p>",
+              "text_align": "center"
+            }
+          },
+          "1599574557322": {
+            "type": "rich_text",
+            "settings": {
+              "width": "regular",
+              "heading_size": "large",
+              "rt_heading": "Delight in the Art of the Travel",
+              "rt_text": "<p>Within the <a href=\"https:\/\/julieandev.com\/collections\/dinnerware\" title=\"Dinnerware\">collection<\/a>, you&#x27;ll find pieces to make a statement and others that effortlessly complement your decor. Each item serves as both a reminder of travels past and to inspire the journeys ahead of you. Thriving on aesthetics and unparalleled craftsmanship, Julie &amp; Ev&#x27;s collection redefines luxury for the modern home.<\/p>",
+              "text_align": "center"
+            }
+          },
+          "1599574634721": {
+            "type": "left-right-section",
+            "settings": {
+              "image_l_r": "shopify:\/\/shop_images\/Julie_and_Ev_Tailored_Tables.png",
+              "layout": "left",
+              "title_l_r": "Barcelona Nights",
+              "text_l_r": "<p>Escape to far and charming places with our travel inspired table settings.  An exclusive concept created by Julie and Ev and inspired on the art of travel.  Photo by Luca Lago.<\/p>",
+              "button_label": "Barcelona Nights",
+              "button_link_l_r": "shopify:\/\/collections\/barcelona-nights"
+            }
+          },
+          "1599574702442": {
+            "type": "left-right-section",
+            "settings": {
+              "image_l_r": "shopify:\/\/shop_images\/Julie_and_Ev_Tailored_Tables_table_settings.png",
+              "layout": "right",
+              "title_l_r": "Portugal Breeze",
+              "text_l_r": "<p>Travel away to the charming country of Portugal and make your table setting a perfect interpretation rooted in culture.  Photo by Zhen Hu<\/p>",
+              "button_label": "Portugal Breeze",
+              "button_link_l_r": "shopify:\/\/collections\/portugal-breeze"
+            }
+          },
+          "1599574772741": {
+            "type": "left-right-section",
+            "settings": {
+              "image_l_r": "shopify:\/\/shop_images\/Italian_summer_tailoted_tables_by_Julie_and_Ev.png",
+              "layout": "left",
+              "title_l_r": "Italian Summer",
+              "text_l_r": "<p>Long summer afternoons, spent along the Amalfi coast while occasionally sipping an aperol spritz is what Dolce Vita is all about.  This table setting is inspired on Dolce Far Niente.  Photo by Flo P<\/p>",
+              "button_label": "Italian Summer",
+              "button_link_l_r": "shopify:\/\/collections\/italian-summer"
+            }
+          }
+        },
+        "block_order": [
+          "1599574496964",
+          "1599574557322",
+          "1599574634721",
+          "1599574702442",
+          "1599574772741"
+        ],
+        "settings": {}
+      },
+      "160339187375642e69": {
+        "type": "pxs-rich-text",
+        "blocks": {
+          "160339187375642e69-0": {
+            "type": "text",
+            "settings": {
+              "title": "Exceptional Craftmanship",
+              "text": "Artisanal goods, hand-made pieces, unique materials, and fibers derived from centuries-old know-how are all elements that inspire Julie & Ev today. Whether you're interested in glassware, tabletops, or something more remarkable - you'll find these inspirations curated in every item we provide. Peruse our <p><a href=\"https:\/\/julieandev.com\/collections\/tabletop\">Tabletop offerings.<\/a><\/p>",
+              "heading_size": "large",
+              "text_alignment": "center"
+            }
+          }
+        },
+        "block_order": [
+          "160339187375642e69-0"
+        ],
+        "settings": {
+          "width": "regular"
+        }
+      },
+      "160493309454daa65f": {
+        "type": "dynamic-slideshow",
+        "disabled": true,
+        "blocks": {
+          "160493309454daa65f-0": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/italian_glass_pitcher_and_glass1.jpg",
+              "layout": "default-right",
+              "text_color": "#0b5a68",
+              "title": "Curated Gift Sets",
+              "text": "<p>This matching gift set comes with a Hand-blown Italian glass pitcher and two drinking glasses.   Give the gift of excitement to that stylish friend who likes to entertain and live beautifully.  <\/p>",
+              "link": "shopify:\/\/collections\/housewarming-gifts",
+              "link_text": "Hand-Blown Italian Gift set"
+            }
+          },
+          "160493309454daa65f-1": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/rooster_plate_gift_set_2b76203f-d257-4bbd-9b7f-31f66c764ca1.jpg",
+              "layout": "default-right",
+              "text_color": "#0b5a68",
+              "title": "Curated Gift Sets",
+              "text": "<p>Even if you can&#x27;t celebrate together, you can enjoy the same beautiful setting. <\/p><p>Send your loved ones our special whimsical collection, which includes our elegant Rooster Plates, made in Portugal, and woven table linens. <\/p>",
+              "link": "shopify:\/\/collections\/housewarming-gifts",
+              "link_text": "Rooster plate gift set"
+            }
+          },
+          "e4457918-d6ac-4a46-b645-f06130edd166": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Italian_dinner_plates_gifts_set_copy.jpg",
+              "layout": "default-right",
+              "text_color": "#0b5a68",
+              "title": "Curated Gift Sets",
+              "text": "<p>A great gift for anyone who loves to entertain, our set of hand-painted Italian plates and whimsical lemon glasses go perfect with the Italian lemon-infused dipping olive oil.  <\/p>",
+              "link": "shopify:\/\/collections\/housewarming-gifts",
+              "link_text": "Hand painted Italian plate set"
+            }
+          }
+        },
+        "block_order": [
+          "160493309454daa65f-0",
+          "160493309454daa65f-1",
+          "e4457918-d6ac-4a46-b645-f06130edd166"
+        ],
+        "settings": {
+          "should_autoplay": true,
+          "slide_autoplay": 3
+        }
+      },
+      "1611337948b92a17e1": {
+        "type": "about-image-overlay",
+        "disabled": true,
+        "settings": {
+          "enable_overlay_section": true,
+          "section_height": "small",
+          "image": "shopify:\/\/shop_images\/1_set.png",
+          "position": "center center",
+          "title": "",
+          "text": "",
+          "content_position": "center-center",
+          "color": "#ffffff",
+          "overlay_background": "#736e6e",
+          "overlay_opacity": 50,
+          "link": "shopify:\/\/collections\/new-arrivals",
+          "button_text": "Shop our arrivals"
+        }
+      },
+      "161962329147cef140": {
+        "type": "raptor-instagram",
+        "settings": {
+          "linktext": "<div id=\"rap__med__instagram\"><\/div><script async src=\"https:\/\/theraptormedia.com\/instagram\/embed.js\" data-id=\"julie-ev.myshopify.com\" defer><\/script>"
+        }
+      },
+      "1619708013534d5865": {
+        "type": "button",
+        "settings": {
+          "title": "view our new arrivals",
+          "url": "shopify:\/\/collections\/new-arrivals",
+          "new": false,
+          "alignment": "center",
+          "padding": 25,
+          "bg": "#1d7383",
+          "text": "#f1f7f6",
+          "border": "#1d7383",
+          "corners": 0,
+          "bgh": "#f1f7f6",
+          "texth": "#1d7383",
+          "borderh": "#1d7383"
+        }
+      }
+    },
+    "content_for_index": [
+      "section-1",
+      "1619708013534d5865",
+      "section-3",
+      "160339187375642e69",
+      "1611337948b92a17e1",
+      "160493309454daa65f",
+      "1597264283837",
+      "161962329147cef140"
+    ]
+  },
+  "presets": {
+    "Light": {
+      "quickshop_show_payment_button": true,
+      "favicon": "",
+      "color_background": "#ffffff",
+      "color_accent": "#292929",
+      "use_highlighted_menu": false,
+      "color_title_text": "#292929",
+      "color_text": "#292929",
+      "color_button_text": "#ffffff",
+      "font_title": "prata_n4",
+      "font_body": "karla_n4",
+      "font_label": "karla_n4",
+      "social_facebook": "",
+      "social_twitter": "",
+      "social_pinterest": "",
+      "social_instagram": "",
+      "social_vimeo": "",
+      "social_youtube": "",
+      "social_medium": "",
+      "social_rss": "",
+      "social_email": "",
+      "share_widget_facebook": true,
+      "share_widget_twitter": true,
+      "share_widget_pinterest": true,
+      "share_widget_email": true,
+      "sections": {
+        "section-1": {
+          "type": "dynamic-slideshow",
+          "blocks": {
+            "slide-1": {
+              "type": "slide",
+              "settings": {
+                "image": "",
+                "layout": "default-left",
+                "text_color": "#000000",
+                "title": "Slide",
+                "text": "<p>Introduce customers to your shop with lifestyle imagery and product photography.<\/p>",
+                "link": "",
+                "link_text": "Slide link"
+              }
+            },
+            "slide-2": {
+              "type": "slide",
+              "settings": {
+                "image": "",
+                "layout": "default-right",
+                "text_color": "#000000",
+                "title": "Slide",
+                "text": "<p>Introduce customers to your shop with lifestyle imagery and product photography.<\/p>",
+                "link": "",
+                "link_text": "Slide link"
+              }
+            },
+            "slide-3": {
+              "type": "slide",
+              "settings": {
+                "image": "",
+                "layout": "default-left",
+                "text_color": "#292929",
+                "title": "Slide",
+                "text": "<p>Introduce customers to your shop with lifestyle imagery and product photography.<\/p>",
+                "link": "",
+                "link_text": "Slide link"
+              }
+            }
+          },
+          "block_order": [
+            "slide-1",
+            "slide-2",
+            "slide-3"
+          ],
+          "settings": {
+            "should_autoplay": false,
+            "slide_autoplay": 3
+          }
+        },
+        "section-2": {
+          "type": "dynamic-featured-collections",
+          "blocks": {
+            "collection-1": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "alignment": "right",
+                "show_description": true,
+                "custom_description": ""
+              }
+            },
+            "collection-2": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "alignment": "left",
+                "show_description": true,
+                "custom_description": ""
+              }
+            },
+            "collection-3": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "alignment": "right",
+                "show_description": true,
+                "custom_description": ""
+              }
+            }
+          },
+          "block_order": [
+            "collection-1",
+            "collection-2",
+            "collection-3"
+          ],
+          "settings": {
+            "title": "Featured collections"
+          }
+        },
+        "section-3": {
+          "type": "dynamic-featured-products",
+          "settings": {
+            "title": "Featured collection",
+            "collection": "",
+            "product_item_style": "natural",
+            "enable_product_quickshop": false,
+            "product_emphasize": true
+          }
+        },
+        "section-4": {
+          "type": "dynamic-blog-posts",
+          "settings": {
+            "title": "Blog posts",
+            "blog": ""
+          }
+        },
+        "section-6": {
+          "type": "dynamic-twitter",
+          "settings": {
+            "title": "Twitter feed",
+            "username": ""
+          }
+        },
+        "static-header": {
+          "type": "static-header",
+          "settings": {
+            "logo": "",
+            "logo_width": "",
+            "mobile_logo": "",
+            "mobile_logo_width": "",
+            "menu": "main-menu"
+          }
+        },
+        "site-footer": {
+          "type": "site-footer",
+          "blocks": {
+            "customer": {
+              "type": "customer",
+              "settings": {
+                "title": "Account"
+              }
+            },
+            "richtext": {
+              "type": "richtext",
+              "settings": {
+                "title": "About",
+                "content": "<p>Use this space to give credit where it's due, reinforce your brand identity, shop policy, or company motto.<\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "customer",
+            "richtext"
+          ],
+          "settings": {
+            "enable_newsletter": true,
+            "enable_social": true,
+            "enable_payment_icons": true
+          }
+        },
+        "static-collection": {
+          "type": "static-collection",
+          "settings": {
+            "enable_menu_form": true,
+            "products-per-page": 12,
+            "product_item_style": "natural",
+            "enable_product_quickshop": false,
+            "show_product_vendors": false
+          }
+        },
+        "static-product": {
+          "type": "static-product",
+          "settings": {
+            "enable_menu_form": true,
+            "show_product_vendor": false,
+            "show_payment_button": true,
+            "enable_social_sharing": false
+          }
+        },
+        "static-article": {
+          "type": "static-article",
+          "settings": {
+            "enable_social_sharing": false
+          }
+        },
+        "static-blog": {
+          "type": "static-blog",
+          "settings": {
+            "posts-per-page": 4
+          }
+        },
+        "pxs-announcement-bar": {
+          "type": "pxs-announcement-bar",
+          "settings": {
+            "show_announcement": false,
+            "announcement_home_only": false,
+            "announcement_text": "Call attention to a special discount, feature, or promotion here.",
+            "announcement_text_mobile": "Use less text on mobile!",
+            "announcement_link": "",
+            "announcement_color": "#ffffff",
+            "announcement_background": "#000000"
+          }
+        },
+        "static-contactbar": {
+          "type": "static-contactbar",
+          "settings": {
+            "trigger": "",
+            "phone_value": "+1 111 111 1111",
+            "email_value": "shop@example.com",
+            "hours_value": "<p>Mon-Fri, 9am-5pm<\/p>",
+            "directions_value": "<p>1005 Langley St<\/p><p>Victoria, BC V8W 1V7<\/p>",
+            "directions_map": false,
+            "api_key": "",
+            "directions-map-zoom": 2,
+            "directions_map_color_fg": "#292929",
+            "directions_map_color_bg": "#ffffff"
+          }
+        }
+      },
+      "content_for_index": [
+        "section-1",
+        "section-2",
+        "section-3",
+        "section-4",
+        "section-6"
+      ]
+    },
+    "Cool": {
+      "quickshop_show_payment_button": true,
+      "favicon": "",
+      "color_background": "#ffffff",
+      "color_accent": "#32818e",
+      "use_highlighted_menu": true,
+      "color_title_text": "#32818e",
+      "color_text": "#292929",
+      "color_button_text": "#ffffff",
+      "font_title": "poppins_n4",
+      "font_body": "karla_n4",
+      "font_label": "karla_n4",
+      "social_facebook": "",
+      "social_twitter": "",
+      "social_pinterest": "",
+      "social_instagram": "",
+      "social_vimeo": "",
+      "social_youtube": "",
+      "social_medium": "",
+      "social_rss": "",
+      "social_email": "",
+      "share_widget_facebook": true,
+      "share_widget_twitter": true,
+      "share_widget_pinterest": true,
+      "share_widget_email": true,
+      "sections": {
+        "section-1": {
+          "type": "dynamic-slideshow",
+          "blocks": {
+            "slide-1": {
+              "type": "slide",
+              "settings": {
+                "image": "",
+                "layout": "default-right",
+                "text_color": "#32818e",
+                "title": "Slide",
+                "text": "<p>Introduce customers to your shop with lifestyle imagery and product photography.<\/p>",
+                "link": "",
+                "link_text": "Slide link"
+              }
+            },
+            "slide-2": {
+              "type": "slide",
+              "settings": {
+                "image": "",
+                "layout": "default-left",
+                "text_color": "#32818e",
+                "title": "Slide",
+                "text": "<p>Introduce customers to your shop with lifestyle imagery and product photography.<\/p>",
+                "link": "",
+                "link_text": "Slide link"
+              }
+            },
+            "slide-3": {
+              "type": "slide",
+              "settings": {
+                "image": "",
+                "layout": "default-right",
+                "text_color": "#32818e",
+                "title": "Slide",
+                "text": "<p>Introduce customers to your shop with lifestyle imagery and product photography.<\/p>",
+                "link": "",
+                "link_text": "Slide link"
+              }
+            }
+          },
+          "block_order": [
+            "slide-1",
+            "slide-2",
+            "slide-3"
+          ],
+          "settings": {
+            "should_autoplay": false,
+            "slide_autoplay": 3
+          }
+        },
+        "section-2": {
+          "type": "dynamic-featured-collections",
+          "blocks": {
+            "collection-1": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "alignment": "left",
+                "show_description": true,
+                "custom_description": ""
+              }
+            },
+            "collection-2": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "alignment": "right",
+                "show_description": true,
+                "custom_description": ""
+              }
+            }
+          },
+          "block_order": [
+            "collection-1",
+            "collection-2"
+          ],
+          "settings": {
+            "title": "Featured collections"
+          }
+        },
+        "section-3": {
+          "type": "dynamic-featured-products",
+          "settings": {
+            "title": "Featured Products",
+            "collection": "",
+            "product_item_style": "cropped-medium",
+            "enable_product_quickshop": false,
+            "product_emphasize": true
+          }
+        },
+        "section-4": {
+          "type": "dynamic-blog-posts",
+          "settings": {
+            "title": "Blog posts",
+            "blog": ""
+          }
+        },
+        "section-6": {
+          "type": "dynamic-twitter",
+          "settings": {
+            "title": "Twitter feed",
+            "username": ""
+          }
+        },
+        "static-header": {
+          "type": "static-header",
+          "settings": {
+            "logo": "",
+            "logo_width": "",
+            "mobile_logo": "",
+            "mobile_logo_width": "",
+            "menu": "main-menu"
+          }
+        },
+        "site-footer": {
+          "type": "site-footer",
+          "blocks": {
+            "customer": {
+              "type": "customer",
+              "settings": {
+                "title": "Account"
+              }
+            },
+            "richtext": {
+              "type": "richtext",
+              "settings": {
+                "title": "About",
+                "content": "<p>Use this space to give credit where it's due, reinforce your brand identity, shop policy, or company motto.<\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "customer",
+            "richtext"
+          ],
+          "settings": {
+            "enable_newsletter": true,
+            "enable_social": true,
+            "enable_payment_icons": true
+          }
+        },
+        "static-collection": {
+          "type": "static-collection",
+          "settings": {
+            "enable_menu_form": true,
+            "products-per-page": 12,
+            "product_item_style": "natural",
+            "enable_product_quickshop": false,
+            "show_product_vendors": false
+          }
+        },
+        "static-product": {
+          "type": "static-product",
+          "settings": {
+            "enable_menu_form": true,
+            "show_product_vendor": false,
+            "show_payment_button": true,
+            "enable_social_sharing": false
+          }
+        },
+        "static-article": {
+          "type": "static-article",
+          "settings": {
+            "enable_social_sharing": false
+          }
+        },
+        "pxs-announcement-bar": {
+          "type": "pxs-announcement-bar",
+          "settings": {
+            "show_announcement": false,
+            "announcement_home_only": false,
+            "announcement_text": "Call attention to a special discount, feature, or promotion here.",
+            "announcement_text_mobile": "Use less text on mobile!",
+            "announcement_link": "",
+            "announcement_color": "#ffffff",
+            "announcement_background": "#000000"
+          }
+        },
+        "static-contactbar": {
+          "type": "static-contactbar",
+          "settings": {
+            "trigger": "",
+            "phone_value": "+1 111 111 1111",
+            "email_value": "shop@example.com",
+            "hours_value": "<p>Mon-Fri, 9am-5pm<\/p>",
+            "directions_value": "<p>1005 Langley St<\/p><p>Victoria, BC V8W 1V7<\/p>",
+            "directions_map": false,
+            "api_key": "",
+            "directions-map-zoom": 2,
+            "directions_map_color_fg": "#292929",
+            "directions_map_color_bg": "#ffffff"
+          }
+        }
+      },
+      "content_for_index": [
+        "section-1",
+        "section-3",
+        "section-2",
+        "section-4",
+        "section-6"
+      ]
+    },
+    "Fresh": {
+      "quickshop_show_payment_button": true,
+      "favicon": "",
+      "color_background": "#f6f6f6",
+      "color_accent": "#657461",
+      "use_highlighted_menu": false,
+      "color_title_text": "#474c46",
+      "color_text": "#6b6b6b",
+      "color_button_text": "#ffffff",
+      "font_title": "roboto_condensed_n4",
+      "font_body": "roboto_n4",
+      "font_label": "muli_n4",
+      "social_facebook": "",
+      "social_twitter": "",
+      "social_pinterest": "",
+      "social_instagram": "",
+      "social_vimeo": "",
+      "social_youtube": "",
+      "social_medium": "",
+      "social_rss": "",
+      "social_email": "",
+      "share_widget_facebook": true,
+      "share_widget_twitter": true,
+      "share_widget_pinterest": true,
+      "share_widget_email": true,
+      "sections": {
+        "section-1": {
+          "type": "dynamic-slideshow",
+          "blocks": {
+            "slide-1-1": {
+              "type": "slide",
+              "settings": {
+                "image": "",
+                "layout": "full-width-right",
+                "text_color": "#ffffff",
+                "title": "Slide",
+                "text": "<p>Introduce customers to your shop with lifestyle imagery and product photography.<\/p>",
+                "link": "",
+                "link_text": "Slide link"
+              }
+            }
+          },
+          "block_order": [
+            "slide-1-1"
+          ],
+          "settings": {
+            "should_autoplay": false,
+            "slide_autoplay": 3
+          }
+        },
+        "section-2": {
+          "type": "dynamic-mobile-collections",
+          "settings": {
+            "title": "Browse By",
+            "show_images": false,
+            "type": "tags",
+            "truncate": true,
+            "truncate_count": 5
+          }
+        },
+        "section-3": {
+          "type": "dynamic-featured-products",
+          "settings": {
+            "title": "Our Best Sellers",
+            "collection": "",
+            "product_item_style": "cropped-large",
+            "enable_product_quickshop": true,
+            "product_emphasize": false
+          }
+        },
+        "section-4": {
+          "type": "dynamic-slideshow",
+          "blocks": {
+            "slide-4-1": {
+              "type": "slide",
+              "settings": {
+                "image": "",
+                "layout": "default-right",
+                "text_color": "#474c46",
+                "title": "Slide",
+                "text": "<p>Introduce customers to your shop with lifestyle imagery and product photography.<\/p>",
+                "link": "",
+                "link_text": "Slide link"
+              }
+            },
+            "slide-4-2": {
+              "type": "slide",
+              "settings": {
+                "image": "",
+                "layout": "default-right",
+                "text_color": "#474c46",
+                "title": "Slide",
+                "text": "<p>Introduce customers to your shop with lifestyle imagery and product photography.<\/p>",
+                "link": "",
+                "link_text": "Slide link"
+              }
+            },
+            "slide-4-3": {
+              "type": "slide",
+              "settings": {
+                "image": "",
+                "layout": "default-right",
+                "text_color": "#474c46",
+                "title": "Slide",
+                "text": "<p>Introduce customers to your shop with lifestyle imagery and product photography.<\/p>",
+                "link": "",
+                "link_text": "Slide link"
+              }
+            }
+          },
+          "block_order": [
+            "slide-4-1",
+            "slide-4-2",
+            "slide-4-3"
+          ],
+          "settings": {
+            "should_autoplay": false,
+            "slide_autoplay": 3
+          }
+        },
+        "section-5": {
+          "type": "dynamic-twitter",
+          "settings": {
+            "title": "Twitter",
+            "username": "pixelunion"
+          }
+        },
+        "static-article": {
+          "type": "static-article",
+          "settings": {
+            "enable_social_sharing": true
+          }
+        },
+        "static-blog": {
+          "type": "static-blog",
+          "settings": {
+            "posts-per-page": 4
+          }
+        },
+        "static-collection": {
+          "type": "static-collection",
+          "settings": {
+            "enable_menu_form": true,
+            "products-per-page": 12,
+            "product_item_style": "cropped-large",
+            "enable_product_quickshop": true,
+            "show_product_vendors": false
+          }
+        },
+        "static-contactbar": {
+          "type": "static-contactbar",
+          "settings": {
+            "trigger": "",
+            "phone_value": "+1 111 111 1111",
+            "email_value": "shop@example.com",
+            "hours_value": "<p>Mon-Fri, 9am-5pm<\/p>",
+            "directions_value": "<p>1005 Langley St<\/p><p>Victoria, BC V8W 1V7<\/p>",
+            "directions_map": false,
+            "api_key": "",
+            "directions-map-zoom": 2,
+            "directions_map_color_fg": "#292929",
+            "directions_map_color_bg": "#ffffff"
+          }
+        },
+        "site-footer": {
+          "type": "site-footer",
+          "settings": {
+            "enable_newsletter": true,
+            "enable_social": true,
+            "enable_payment_icons": true
+          }
+        },
+        "static-header": {
+          "type": "static-header",
+          "settings": {
+            "logo": "",
+            "logo_width": "",
+            "mobile_logo": "",
+            "mobile_logo_width": "",
+            "menu": "main-menu"
+          }
+        },
+        "static-product": {
+          "type": "static-product",
+          "settings": {
+            "enable_menu_form": true,
+            "show_product_vendor": false,
+            "show_payment_button": true,
+            "enable_social_sharing": true
+          }
+        },
+        "pxs-announcement-bar": {
+          "type": "pxs-announcement-bar",
+          "settings": {
+            "show_announcement": false,
+            "announcement_home_only": false,
+            "announcement_text": "Call attention to a special discount, feature, or promotion here.",
+            "announcement_text_mobile": "Use less text on mobile!",
+            "announcement_link": "",
+            "announcement_color": "#ffffff",
+            "announcement_background": "#000000"
+          }
+        }
+      },
+      "content_for_index": [
+        "section-1",
+        "section-2",
+        "section-3",
+        "section-4",
+        "section-5"
+      ]
+    }
+  }
+}

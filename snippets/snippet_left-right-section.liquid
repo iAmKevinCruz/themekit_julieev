@@ -1,0 +1,62 @@
+{% if section.blocks.size > 0 %}
+  <div class="left-right-image">
+   	<div class="left-right-image__wrapper">
+      {% if block.settings.image_l_r != blank %}
+         {% if block.settings.layout == 'left' %}
+         <div class="left-right-image__left">
+             <div class="left-right-image__img">
+                 <img class="feature-row__image lazyload"
+                   src="{{ block.settings.image_l_r | img_url: '1024x464' }}"
+                   data-src="{{ img_url }}"
+                   data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
+                   data-aspectratio="{{ block.settings.image_l_r.aspect_ratio }}"
+                   data-sizes="auto"
+                   alt="{{ block.settings.image_l_r.alt | escape }}">
+             </div>
+             <div class="left-right-image__text">
+                 {% if block.settings.title_l_r != blank %}
+                   <h2 class="h3">{{ block.settings.title_l_r | escape }}</h2>
+                 {% endif %}
+                 {% if block.settings.text_l_r != blank %}
+                   <div class="rte-setting featured-row__subtext">{{ block.settings.text_l_r }}</div>
+                 {% endif %}
+                 {% if block.settings.button_label != blank and block.settings.button_link_l_r != blank %}
+                   <a href="{{ block.settings.button_link_l_r }}" class="btn">
+                     {{ block.settings.button_label | escape }}
+                   </a>
+                 {% endif %}
+             </div>
+         </div>
+         {% endif %} <!-- left -->
+         {% if block.settings.layout == 'right' %}
+         <div class="left-right-image__right">
+             <div class="left-right-image__text">
+                 {% if block.settings.title_l_r != blank %}
+                   <h2 class="h3">{{ block.settings.title_l_r | escape }}</h2>
+                 {% endif %}
+                 {% if block.settings.text_l_r != blank %}
+                   <div class="rte-setting featured-row__subtext">{{ block.settings.text_l_r }}</div>
+                 {% endif %}
+                 {% if block.settings.button_label != blank and block.settings.button_link_l_r != blank %}
+                   <a href="{{ block.settings.button_link_l_r }}" class="btn">
+                     {{ block.settings.button_label | escape }}
+                   </a>
+                 {% endif %}
+             </div>
+             <div class="left-right-image__img">
+                 <img class="feature-row__image lazyload"
+                   src="{{ block.settings.image_l_r | img_url:'1024x464' }}"
+                   data-src="{{ img_url }}"
+                   data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
+                   data-aspectratio="{{ block.settings.image_l_r.aspect_ratio }}"
+                   data-sizes="auto"
+                   alt="{{ block.settings.image_l_r.alt | escape }}">
+             </div>
+         </div>
+         {% endif %} <!-- left -->
+
+      {% endif %}
+    </div>
+   </div>
+
+{% endif %}

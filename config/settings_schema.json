@@ -1,0 +1,267 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Handy",
+    "theme_author": "Pixel Union",
+    "theme_version": "2.9.1",
+    "theme_documentation_url": "http:\/\/support.pixelunion.net\/category\/354-handy",
+    "theme_support_url": "https:\/\/support.pixelunion.net\/hc\/en-us\/requests\/new"
+  },
+  {
+    "name": "Quickshop",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "quickshop_enable_cart_redirection",
+        "label": "Enable cart redirection",
+        "info": "Automatically sends users to the Cart page after adding a product.",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "quickshop_show_payment_button",
+        "label": "Show dynamic checkout button",
+        "info": "Each customer will see their preferred payment method from those available on your store, such as PayPal or Apple Pay. [Learn more](https:\/\/help.shopify.com\/manual\/using-themes\/change-the-layout\/dynamic-checkout)",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "quickshop_enable_menu_form",
+        "label": "Enable bottom menu",
+        "info": "Displays product options in a sticky bottom menu",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Media"
+      },
+      {
+        "type": "paragraph",
+        "content": "Learn more about [media types](https:\/\/help.shopify.com\/en\/manual\/products\/product-media\/product-media-types)"
+      },
+      {
+        "type": "select",
+        "id": "quickshop_gallery_layout",
+        "label": "Layout",
+        "options": [
+          {
+            "group": "List",
+            "label": "No thumbnails",
+            "value": "list"
+          },
+          {
+            "group": "Gallery",
+            "label": "Thumbnails left of gallery",
+            "value": "gallery-left"
+          },
+          {
+            "group": "Gallery",
+            "label": "Thumbnails right of gallery",
+            "value": "gallery-right"
+          },
+          {
+            "group": "Gallery",
+            "label": "Thumbnails below gallery",
+            "value": "gallery-below"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "quickshop_gallery_video_autoplay",
+        "label": "Enable video autoplay",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "quickshop_gallery_video_looping",
+        "label": "Enable video looping",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "quickshop_gallery_position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "label": "Gallery position",
+        "default": "left"
+      }
+    ]
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon image",
+        "info": "32 x 32px .png required"
+      }
+    ]
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_background",
+        "label": "Background"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Accent"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_highlighted_menu",
+        "label": "Use highlighted bottom bar",
+        "info": "Applies the accent color to the bottom bar on collection, product, and cart pages. The highlighted bottom bar appears on large screens only.",
+        "default": false
+      },
+      {
+        "type": "color",
+        "id": "color_title_text",
+        "label": "Headings & menu links"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Body text"
+      },
+      {
+        "type": "color",
+        "id": "color_button_text",
+        "label": "Button text"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "font_picker",
+        "label": "Title font",
+        "id": "font_title",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "font_picker",
+        "label": "Body font",
+        "id": "font_body",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "font_picker",
+        "label": "Label font",
+        "id": "font_label",
+        "default": "helvetica_n4"
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "social_default_image",
+        "label": "Default social sharing image",
+        "info": "The image shown when sharing a link if a page-specific image isn't available"
+      },
+      {
+        "type": "header",
+        "content": "Accounts"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook",
+        "label": "Facebook",
+        "info": "https:\/\/facebook.com\/pixelunion"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter",
+        "label": "Twitter",
+        "info": "https:\/\/twitter.com\/pixelunion"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest",
+        "label": "Pinterest",
+        "info": "https:\/\/pinterest.com\/pixelunion\/"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram",
+        "label": "Instagram",
+        "info": "https:\/\/instagram.com\/pixelunion"
+      },
+      {
+        "type": "text",
+        "id": "social_vimeo",
+        "label": "Vimeo",
+        "info": "https:\/\/vimeo.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube",
+        "label": "YouTube",
+        "info": "https:\/\/youtube.com\/user\/PixelUnionThemes"
+      },
+      {
+        "type": "text",
+        "id": "social_medium",
+        "label": "Medium",
+        "info": "https:\/\/medium.com\/@shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_rss",
+        "label": "RSS",
+        "info": "https:\/\/www.pixelunion.net\/feed\/"
+      },
+      {
+        "type": "text",
+        "id": "social_email",
+        "label": "Email Address",
+        "info": "info@example.com"
+      },
+      {
+        "type": "header",
+        "content": "Sharing options"
+      },
+      {
+        "type": "checkbox",
+        "id": "share_widget_facebook",
+        "label": "Share on Facebook",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "share_widget_twitter",
+        "label": "Tweet on Twitter",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "share_widget_pinterest",
+        "label": "Pin on Pinterest",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "share_widget_email",
+        "label": "Send as an e-mail",
+        "default": true
+      }
+    ]
+  }
+]

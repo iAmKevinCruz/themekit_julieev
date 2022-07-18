@@ -1,0 +1,65 @@
+{%- comment -%}
+  Product highlights component
+
+  @param products
+    The products to display from
+
+  @param product_count
+    The amount of products
+
+  @param product_item_style
+    What styling should the product image be given
+
+  @param use_quickshop
+    Whether to use quickshop or not
+
+  @param products_per_row
+    How many products to display per row
+
+  @param products_row_count
+    How many rows of products to display
+
+  @param product_emphasize
+    Emphasize a product image in the first row
+{%- endcomment -%}
+
+{%- assign grid_count = products_per_row | times: products_row_count -%}
+<section class="product-highlights product-highlights-count-{{ products_per_row }}
+    {% if product_emphasize %}product-highlights-emphasized{% endif %}" data-product-highlights
+  >
+  {%- if product_emphasize -%}
+    {%- include 'product-highlights-emphasized',
+      products: products,
+      product_item_style: product_item_style,
+      use_quickshop: use_quickshop,
+      product_count: product_count,
+      products_per_row: products_per_row,
+      products_row_count: products_row_count,
+      product_emphasize: product_emphasize
+    -%}
+  {%- else -%}
+    {%- include 'product-highlights-normal',
+      products: products,
+      product_item_style: product_item_style,
+      use_quickshop: use_quickshop,
+      product_count: product_count,
+      products_per_row: products_per_row,
+      products_row_count: products_row_count,
+      product_emphasize: product_emphasize
+    -%}
+  {%- endif -%}
+  {%- comment -%}
+    Include a hidden grid-style display container with all products to convert to a
+    flickity slider in mobile view (identified with the mobile_container variable).
+  {%- endcomment -%}
+  {%- include 'product-highlights-normal',
+    products: products,
+    product_item_style: product_item_style,
+    use_quickshop: use_quickshop,
+    product_count: product_count,
+    products_per_row: products_per_row,
+    products_row_count: products_row_count,
+    product_emphasize: false,
+    mobile_container: true
+  -%}
+</section>

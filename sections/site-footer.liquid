@@ -1,0 +1,317 @@
+{% assign menu_count = 0 %}
+
+{% if shop.customer_accounts_enabled %}
+  {% assign menu_count = menu_count | plus: 1 %}
+{% endif %}
+
+{% for block in section.blocks %}
+  {% if block.type == 'menu' %}
+    {% assign menu_count = menu_count | plus: 1 %}
+  {% endif %}
+{% endfor %}
+
+{% assign social_count = 0 %}
+
+{%- if section.settings.enable_social -%}
+  {%- if settings.social_facebook != blank -%}
+    {% assign social_count = social_count | plus: 1 %}
+  {%- endif -%}
+
+  {%- if settings.social_twitter != blank -%}
+    {% assign social_count = social_count | plus: 1 %}
+  {%- endif -%}
+
+  {%- if settings.social_pinterest != blank -%}
+    {% assign social_count = social_count | plus: 1 %}
+  {%- endif -%}
+
+  {%- if settings.social_instagram != blank -%}
+    {% assign social_count = social_count | plus: 1 %}
+  {%- endif -%}
+
+  {%- if settings.social_vimeo != blank -%}
+    {% assign social_count = social_count | plus: 1 %}
+  {%- endif -%}
+
+  {%- if settings.social_youtube != blank -%}
+    {% assign social_count = social_count | plus: 1 %}
+  {%- endif -%}
+
+  {%- if settings.social_medium != blank -%}
+    {% assign social_count = social_count | plus: 1 %}
+  {%- endif -%}
+
+  {%- if settings.social_email != blank -%}
+    {% assign social_count = social_count | plus: 1 %}
+  {%- endif -%}
+
+  {%- if settings.social_rss != blank -%}
+    {% assign social_count = social_count | plus: 1 %}
+  {%- endif -%}
+{%- endif -%}
+
+<footer class="site-footer" data-section-id="{{ section.id }}" data-section-type="static-footer">
+  {% if section.settings.enable_newsletter or social_count > 0 %}
+    <div class="site-footer-item site-footer-social">
+      {% if section.settings.enable_newsletter %}{% include 'newsletter' %}{% endif %}
+      {% if section.settings.enable_social %}{% include 'social' %}{% endif %}
+    </div>
+  {% endif %}
+
+  <div class="site-footer-item site-footer-nav">
+    <nav class="footnav footnav-count-{{ menu_count }}">
+
+      {% for block in section.blocks %}
+        <div class="footnav-item footnav-item-{{ block.type }}" {{ block.shopify_attributes }}>
+
+          {% if block.type == 'richtext' %}
+            <h1 class="footnav-title">{{ block.settings.title | escape }}</h1>
+            <div class="footnav-rte">{{ block.settings.content }}</div>
+          {% endif %}
+
+          {% if block.type == 'menu' %}
+            {% assign menu = linklists[block.settings.menu] %}
+
+            <h1 class="footnav-title">{{ menu.title }}</h1>
+            <ul class="footnav-menu">
+              {% for link in menu.links %}
+                <li class="footnav-menu-link">
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+
+          {% if block.type == 'customer' %}
+            {% if shop.customer_accounts_enabled %}
+              <h1 class="footnav-title">{{ block.settings.title | escape }}</h1>
+              <ul class="footnav-menu">
+                {% if customer %}
+                  <li class="footnav-menu-link">
+                    <a href="{{ routes.account_url }}">{{ 'footer.footnav.account.logged_in_html' | t: user_name: customer.first_name }}</a>
+                  </li>
+                  <li class="footnav-menu-link">
+                    {{ 'footer.footnav.account.logout' | t | customer_logout_link }}
+                  </li>
+                {% else %}
+                  <li class="footnav-menu-link">
+                    {{ 'footer.footnav.account.login' | t | customer_login_link }}
+                  </li>
+                  {% if shop.customer_accounts_optional %}
+                    <li class="footnav-menu-link">
+                      {{ 'footer.footnav.account.register' | t | customer_register_link }}
+                    </li>
+                  {% endif %}
+                {% endif %}
+              </ul>
+            {% endif %}
+          {% endif %}
+
+        </div>
+      {% endfor %}
+
+    </nav>
+  </div>
+
+  {% assign currency_selector = section.settings.show_currency_selector %}
+  {% assign locale_selector = section.settings.show_locale_selector %}
+  {% assign show_cross_border = false %}
+  {% if currency_selector or locale_selector %}
+    {% assign show_cross_border = true %}
+  {% endif %}
+  {% assign show_payment_types = false %}
+  {% if shop.enabled_payment_types.size > 0 and section.settings.enable_payment_icons %}
+    {% assign show_payment_types = true %}
+  {% endif %}
+
+  {% if show_payment_types or show_cross_border %}
+    <div class="site-footer-item site-footer__payment-cross-border">
+      {% if show_payment_types %}
+        <div class="payment">
+          {% for type in shop.enabled_payment_types %}
+            <div class="payment-type">
+              {{ type | payment_type_svg_tag }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% if show_cross_border %}
+        {% comment %}cross-border{% endcomment %}
+        {% form 'localization' %}
+          {% if locale_selector and form.available_locales.size > 1 %}
+            {% comment %}multi-language{% endcomment %}
+            <div class="selectors-form__item">
+              <div class="disclosure" data-disclosure-locale>
+                <button type="button" class="disclosure__toggle" aria-expanded="false" aria-controls="lang-list" aria-describedby="lang-heading" data-disclosure-toggle>
+                  {{ form.current_locale.endonym_name }}
+                </button>
+                <ul id="lang-list" class="disclosure-list" data-disclosure-list>
+                  {% for locale in form.available_locales %}
+                    <li>
+                      <a class="disclosure-list__item {% if locale.iso_code == form.current_locale.iso_code %}disclosure-list__item--current{% endif %}" href="#" lang="{{ locale.iso_code }}" {% if locale.iso_code == form.current_locale.iso_code %}aria-current="true"{% endif %} data-value="{{ locale.iso_code }}" data-disclosure-option>
+                        <span class="disclosure-list__option">{{ locale.endonym_name }}</span>
+                      </a>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+                <input type="hidden" name="locale_code" id="LocaleSelector" value="{{ form.current_locale.iso_code }}" data-disclosure-input/>
+              </div>
+            </div>
+          {% endif %}
+        
+          {% if currency_selector and form.available_currencies.size > 1 %}
+            {% comment %}multi-currency{% endcomment %}
+            <div class="selectors-form__item">
+              <div class="disclosure" data-disclosure-currency>
+                <button type="button" class="disclosure__toggle" aria-expanded="false" aria-controls="currency-list" aria-describedby="currency-heading" data-disclosure-toggle>
+                  {{ form.current_currency.iso_code }} {%- if form.current_currency.symbol -%}{{ form.current_currency.symbol }}{%- endif -%}
+                </button>
+                <ul id="currency-list" class="disclosure-list" data-disclosure-list>
+                  {% for currency in form.available_currencies %}
+                    <li>
+                      <a class="disclosure-list__item {% if currency.iso_code == form.current_currency.iso_code %}disclosure-list__item--current{% endif %}" href="#" {% if currency.iso_code == form.current_currency.iso_code %}aria-current="true"{% endif %} data-value="{{ currency.iso_code }}" data-disclosure-option>
+                        <span class="disclosure-list__option">{{ currency.iso_code }} {%- if currency.symbol -%}{{ currency.symbol }}{%- endif -%}</span>
+                      </a>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+                <input type="hidden" name="currency_code" id="CurrencySelector" value="{{ form.current_currency.iso_code }}" data-disclosure-input/>
+              </div>
+            </div>
+          {% endif %}
+        {% endform %}
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div class="site-footer-item">
+    <div class="credits">
+      {% capture year %}
+        {{ 'now' | date: '%Y' }}
+      {% endcapture %}
+
+      {{ 'general.general.copyright_html' | t: year: year, shop_name: shop.name }}
+      <br>
+      {{ powered_by_link }}
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_newsletter",
+      "label": "Show newsletter",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_social",
+      "label": "Show social accounts",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_payment_icons",
+      "label": "Show payment icons",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Language Selector",
+      "info": "To add a language, go to your [language settings.](/admin/settings/languages)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_locale_selector",
+      "label": "Show language selector",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Currency Selector",
+      "info": "To add a currency, go to your [payment settings.](/admin/settings/payments)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_currency_selector",
+      "label": "Show currency selector",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "richtext",
+      "name": "Rich text",
+      "limit": 2,
+      "settings": [
+        {
+          "id": "title",
+          "type": "text",
+          "label": "Heading",
+          "default": "About"
+        },
+        {
+          "id": "content",
+          "type": "richtext",
+          "label": "Content",
+          "default": "<p>Use this space to give credit where it's due, reinforce your brand identity, shop policy, or company motto.</p>"
+        }
+      ]
+    },
+    {
+      "type": "menu",
+      "name": "Menu",
+      "limit": 6,
+      "settings": [
+        {
+          "id": "menu",
+          "type": "link_list",
+          "label": "Menu",
+          "info": "This menu won't show dropdown items"
+        }
+      ]
+    },
+    {
+      "type": "customer",
+      "name": "Customer links",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Show Log In and Register links. Ensure you've enabled customer accounts in the Checkout settings of your Shopify admin."
+        },
+        {
+          "id": "title",
+          "type": "text",
+          "label": "Title",
+          "default": "Account"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "richtext",
+        "settings": {}
+      },
+      {
+        "type": "menu",
+        "settings": {
+          "menu": "footer"
+        }
+      },
+      {
+        "type": "customer",
+        "settings": {}
+      }
+    ]
+  }
+}
+
+{% endschema %}

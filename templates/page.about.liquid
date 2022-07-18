@@ -1,0 +1,15 @@
+<article class="page">
+  {% include 'masthead', title: page.title %}
+
+  <div class="about-page">
+    {% section 'about-image-overlay' %}
+    {% section 'pxs-rich-text'  %}
+	{% section 'about-text-block' %}
+    {% section 'about-image-bottom' %}
+  </div>
+</article>
+<style>
+  .about-page {
+    margin-bottom: 30px;
+  }
+</style>

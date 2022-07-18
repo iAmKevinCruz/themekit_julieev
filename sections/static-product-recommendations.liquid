@@ -1,0 +1,106 @@
+{% assign product_limit = section.settings.product_limit | times: 1 %}
+
+{% assign product_item_style = section.settings.product_item_style %}
+
+{%- if section.settings.enable_image_crop and product_item_style != 'natural' -%}
+  {%- assign product_item_style = product_item_style | prepend: 'cropped-' -%}
+{%- endif -%}
+
+{% if recommendations.performed %}
+  <div data-html>
+    {% if recommendations.products_count > 0 %}
+      <span class="product-recommendations-title">{{ section.settings.product_recommendations_heading }}</span>
+      {%-
+        include 'product-highlights',
+        products: recommendations.products,
+        product_count: recommendations.products_count,
+        product_item_style: product_item_style,
+        use_quickshop: section.settings.enable_product_quickshop,
+        products_per_row: product_limit,
+        products_row_count: 1,
+        product_emphasize: section.settings.product_emphasize
+      -%}
+    {%- endif -%}
+  </div>
+{% else %}
+  {% if section.settings.show_product_recommendations %}
+    <script
+      type="application/json"
+      data-section-type="static-product-recommendations"
+      data-section-id="{{ section.id }}"
+      data-section-data
+    >
+      {
+        "settings": {
+          "limit": {{ product_limit }}
+        },
+        "productId": {{ product.id | json }}
+      }
+    </script>
+
+    <section class="section-product-recommendations" data-product-recommendations></section>
+  {% endif %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "Recommended products",
+  "settings": [
+    {
+      "id": "show_product_recommendations",
+      "type": "checkbox",
+      "label": "Show dynamic recommendations",
+      "info": "Dynamic recommendations change and improve with time. [Learn more](https://help.shopify.com/en/themes/development/recommended-products)",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "product_recommendations_heading",
+      "label": "Heading",
+      "default": "You may also like"
+    },
+    {
+      "id": "product_item_style",
+      "type": "select",
+      "label": "Product aspect ratio",
+      "options": [
+        { "value": "natural", "label": "Natural" },
+        { "value": "small", "label": "Short (4:3)" },
+        { "value": "medium", "label": "Square (1:1)" },
+        { "value": "large", "label": "Tall (2:3)" }
+      ],
+      "default": "natural"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_image_crop",
+      "label": "Enable image crop",
+      "info": "If disabled, white space will be applied around the image. Has no effect when media aspect ratio is set to natural.",
+      "default": false
+    },
+    {
+      "id": "enable_product_quickshop",
+      "type": "checkbox",
+      "label": "Enable product quickshop",
+      "default": false
+    },
+    {
+      "id": "product_limit",
+      "type": "range",
+      "label": "Products",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "id": "product_emphasize",
+      "type": "checkbox",
+      "label": "Emphasize product",
+      "info": "Creates an alternate layout on larger screens",
+      "default": true
+    }
+  ]
+}
+
+{% endschema %}

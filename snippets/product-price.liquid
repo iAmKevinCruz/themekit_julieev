@@ -1,0 +1,92 @@
+{% comment %}
+  A shared price component, with compare at price, and regular price
+
+  @param product
+  @param parent_type
+    Identifies the parent component: dynamic-product, static-product, quickshop, product-item
+{% endcomment %}
+
+{% assign variant = product.selected_or_first_available_variant %}
+
+<div class="product-price">
+  <span
+    class="
+      money
+      money-compare-at
+      {%
+        if onboarding
+        or variant.compare_at_price == blank
+        or variant.price == variant.compare_at_price
+      %}
+        money-compare-at-hidden
+      {% endif %}
+    "
+    data-variant-compare-at-price
+  >
+    {{ variant.compare_at_price | money }}
+  </span>
+
+  <span class="money" data-variant-price>
+    {% if onboarding %}
+      {{ 'product.onboarding.price' | t }}
+    {% else %}
+      {{ variant.price | money }}
+    {% endif %}
+  </span>
+
+  {% assign variant_for_unit_price = variant %}
+  {% comment %}unit-price{% endcomment %}
+  {% comment %}
+    @param variant_for_unit_price
+      Product variant for price
+  {% endcomment %}
+  
+  {% capture total_quantity %}
+    <span class="product-price__unit-price-total-quantity" data-unit-price-quantity>
+      {{ variant_for_unit_price.unit_price_measurement.quantity_value }}{{ variant_for_unit_price.unit_price_measurement.quantity_unit }}
+    </span>
+  {% endcapture %}
+  
+  
+  {% capture unit_price %}
+    <span class="product-price__unit-price-amount money" data-unit-price-amount>
+      {{ variant_for_unit_price.unit_price | money }}
+    </span>
+  {% endcapture %}
+  {% capture unit_measure %}
+    <span class="product-price__unit-price-measure" data-unit-price-measure>
+      {%- if variant_for_unit_price.unit_price_measurement.reference_value != 1 -%}
+        {{ variant_for_unit_price.unit_price_measurement.reference_value }}
+      {%- endif %}
+      {{ variant_for_unit_price.unit_price_measurement.reference_unit }}
+    </span>
+  {% endcapture %}
+  
+  <div
+    class="
+      product-price__unit-price
+      {% unless variant_for_unit_price.unit_price_measurement %}hidden{% endunless %}
+    "
+    data-unit-price
+  >
+    {{ 'product.price_per_unit_html' | t: total_quantity: total_quantity, unit_price: unit_price, unit_measure: unit_measure | strip_newlines }}
+  </div>
+  
+  {% assign variant_for_unit_price = blank %}
+
+
+  {%- capture tax_text -%}
+    {{ 'product.tax_line_html' | t }}
+  {%- endcapture -%}
+
+  {%- if tax_text != blank and parent_type != 'product-item' -%}
+      <div class="
+        product-price__tax
+        {% unless variant.taxable %}hidden{% endunless %}
+        "
+        data-tax-line
+      >
+        {{ tax_text }}
+      </div>
+  {%- endif -%}
+</div>

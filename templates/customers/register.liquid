@@ -1,0 +1,106 @@
+<div class="page-content template-account-register">
+
+  <h1 class="template-account-register-title">{{ 'customers.register.header' | t }}</h1>
+
+
+  {% form 'create_customer' %}
+
+    {{ form.errors | default_errors }}
+
+    <label for="FirstName" class="hidden-label">{{ 'general.form.first_name' | t }}</label>
+    <input type="text" name="customer[first_name]" id="FirstName" class="input-full" placeholder="{{ 'general.form.first_name' | t }}" {% if form.first_name %}value="{{ form.first_name }}"{% endif %} autocapitalize="words" autofocus>
+
+    <label for="LastName" class="hidden-label">{{ 'general.form.last_name' | t }}</label>
+    <input type="text" name="customer[last_name]" id="LastName" class="input-full" placeholder="{{ 'general.form.last_name' | t }}" {% if form.last_name %}value="{{ form.last_name }}"{% endif %} autocapitalize="words">
+
+    <label for="Email" class="hidden-label">{{ 'general.form.email' | t }}</label>
+    <input type="email" name="customer[email]" id="Email" class="input-full{% if form.errors contains 'email' %} error{% endif %}" placeholder="{{ 'general.form.email' | t }}" {% if form.email %} value="{{ form.email }}"{% endif %} autocorrect="off" autocapitalize="off">
+
+    <label for="CreatePassword" class="hidden-label">{{ 'general.form.password' | t }}</label>
+    <input type="password" name="customer[password]" id="CreatePassword" class="input-full{% if form.errors contains 'password' %} error{% endif %}" placeholder="{{ 'general.form.password' | t }}">
+
+    <p>
+      <input type="submit" value="{{ 'customers.register.submit' | t }}" class="btn btn--full">
+    </p>
+
+  {% endform %}
+<!--
+  {% form 'create_customer' %}
+
+    {% if form.errors %}
+      {{ form.errors | default_errors }}
+    {% endif %}
+
+    <div class="input-wrapper">
+      <label class="input-label" for="customer[first_name]">{{ 'general.form.first_name' | t }}</label>
+      <input
+        id="customer_first_name"
+        class="input-field {% if form.errors contains 'first_name' %}error{% endif %}"
+        type="text"
+        placeholder="{{ 'general.form.first_name' | t }}"
+        value="{{ form.first_name }}"
+        name="customer[first_name]">
+
+      {% if form.errors contains 'first_name' %}
+        <p class="error-message">
+          {{ 'general.form.first_name' | t }} {{ form.errors.messages['first_name'] }}
+        </p>
+      {% endif %}
+    </div>
+  <div class="input-wrapper">
+      <label class="input-label" for="customer[last_name]">{{ 'general.form.last_name' | t }}</label>
+      <input
+        id="customer_last_name"
+        class="input-field {% if form.errors contains 'last_name' %}error{% endif %}"
+        type="text"
+        placeholder="{{ 'general.form.last_name' | t }}"
+
+        value="{{ form.last_name }}"
+        name="customer[last_name]">
+
+      {% if form.errors contains 'last_name' %}
+        <p class="error-message">
+          {{ 'general.form.last_name' | t }} {{ form.errors.messages['last_name'] }}
+        </p>
+      {% endif %}
+    </div>
+
+    <div class="input-wrapper">
+      <label class="input-label" for="customer[email]">{{ 'general.form.email' | t }}</label>
+      <input
+        id="customer_email"
+        class="input-field {% if form.errors contains 'email' %}error{% endif %}"
+        type="text"
+            placeholder="{{ 'general.form.email_placeholder' | t }}"
+        value="{{ form.email }}"
+        name="customer[email]”>
+
+      {% if form.errors contains 'email' %}
+        <p class="error-message">
+          {{ 'general.form.email' | t }} {{ form.errors.messages['email'] }}
+        </p>
+      {% endif %}
+    </div>
+
+    <div class="input-wrapper">
+      <label class="input-label" for="customer[password]">{{ 'general.form.password' | t }}</label>
+      <input
+        id="customer_password"
+        class="input-field {% if form.errors contains 'password' %}error{% endif %}"
+        placeholder="{{ 'general.form.password_placeholder' | t }}"
+        type="password"
+        name="customer[password]">
+
+      {% if form.errors contains 'password' %}
+        <p class="error-message">
+          {{ 'general.form.password' | t }} {{ form.errors.messages['password'] }}
+        </p>
+      {% endif %}
+    </div>
+
+    <div class="input-wrapper">
+      <input class="button" type="submit" value="{{ 'customers.register.submit' | t }}">
+    </div>
+
+  {% endform %} -->
+</div>

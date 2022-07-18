@@ -1,0 +1,410 @@
+<div class="multi-section">
+{% for block in section.blocks %}
+    <div class="multi-section_item">
+      {% case block.type %}
+
+        {% when 'image-overlay-section' %}
+        {% include 'snippet_image-overlay-section' %}
+
+        {% when 'rich_text' %}
+        {% include 'snippet_rich-text-section' %}
+
+        {% when 'left-right-section' %}
+        {% include 'snippet_left-right-section' %}
+
+      {% endcase %}
+    </div>
+{% endfor %}
+</div>
+
+{% style %}
+    .left-right-image__left,
+    .left-right-image__right {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 80px;
+    }
+    img {
+      max-width: 100%;
+    }
+    .left-right-image__img, .left-right-image__text {
+      width: 50%;
+      padding: 20px;
+    }
+    .h3 {
+      font-family: Muli,sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      display: block;
+      margin: 0 0 15px;
+      font-size: 35px;
+      letter-spacing: 0.2px;
+      color: #0b5a68;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    a.btn {
+      font-family: Muli,sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      padding-right: 24px;
+      padding-left: 24px;
+      font-size: 11px;
+      line-height: 1.4;
+      letter-spacing: 1px;
+      color: #f1f7f6;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: #1d7383;
+      border: 0;
+      padding: 14px;
+    }
+    a.btn:hover {
+      background: rgba(29, 115, 131, 0.9);
+    }
+    .featured-row__subtext {
+      margin-bottom: 25px;
+    }
+    @media(max-width: 992px) {
+       .left-right-image__left,
+      .left-right-image__right {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .left-right-image__img, .left-right-image__text {
+          width: 100%;
+       }
+      .left-right-image__right .left-right-image__img {
+        order: 1;
+      }
+      .left-right-image__right .left-right-image__text {
+        order: 2;
+      }
+    }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Custom page",
+  "max_blocks": 40,
+  "blocks": [
+    {
+      "type": "image-overlay-section",
+      "name": "Image overlay Section",
+      "settings": [
+          {
+            "type": "checkbox",
+            "id": "enable_overlay_section",
+            "label": "Show overlay image section",
+            "info": "Lets you show a header with image overlay and CTA Button",
+            "default": false
+        },
+        {
+          "type": "select",
+          "id": "section_height",
+          "label": "Section height",
+          "options": [
+            {
+              "value": "small",
+              "label": "Small"
+            },
+            {
+              "value": "medium",
+              "label": "Medium"
+            },
+            {
+              "value": "large",
+              "label": "Large"
+            },
+            {
+              "value": "original",
+              "label": "Original aspect ratio"
+            }
+          ],
+          "default": "medium"
+        },
+        {
+          "type": "header",
+          "content": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_overlay",
+          "label": "Image"
+        },
+        {
+          "type": "select",
+          "id": "position",
+          "label": "Position",
+          "info": "Adjust the focal point of the image. Note: This setting will not have much of an impact if your background image's dimensions are roughly the same size as the section.",
+          "options": [
+            {
+              "label": "Top left",
+              "value": "top left"
+            },
+            {
+              "label": "Top center",
+              "value": "top center"
+            },
+            {
+              "label": "Top right",
+              "value": "top right"
+            },
+            {
+              "label": "Center left",
+              "value": "center left"
+            },
+            {
+              "label": "Center",
+              "value": "center center"
+            },
+            {
+              "label": "Center right",
+              "value": "center right"
+            },
+            {
+              "label": "Bottom left",
+              "value": "bottom left"
+            },
+            {
+              "label": "Bottom center",
+              "value": "bottom center"
+            },
+            {
+              "label": "Bottom right",
+              "value": "bottom right"
+            }
+          ],
+          "default": "center center"
+        },
+        {
+          "type": "header",
+          "content": "Overlay"
+        },
+        {
+          "type": "text",
+          "id": "title_overlay",
+          "label": "Heading",
+          "default": "Image with text overlay"
+        },
+        {
+          "type": "richtext",
+          "id": "text_overlay",
+          "label": "Text",
+          "default": "<p>Say a bit about your brand, a specific product, or promotion.</p>"
+        },
+		{
+            "type": "textarea",
+            "id": "code",
+            "label": "HTML Content"
+          },
+        {
+          "type": "select",
+          "id": "content_position",
+          "label": "Content position",
+          "options": [
+            {
+              "value": "top-left",
+              "label": "Top left"
+            },
+            {
+              "value": "top-center",
+              "label": "Top center"
+            },
+            {
+              "value": "top-right",
+              "label": "Top right"
+            },
+            {
+              "value": "center-left",
+              "label": "Center left"
+            },
+            {
+              "value": "center-center",
+              "label": "Center center"
+            },
+            {
+              "value": "center-right",
+              "label": "Center right"
+            },
+            {
+              "value": "bottom-left",
+              "label": "Bottom left"
+            },
+            {
+              "value": "bottom-center",
+              "label": "Bottom center"
+            },
+            {
+              "value": "bottom-right",
+              "label": "Bottom right"
+            }
+          ],
+          "default": "center-center"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Text color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "overlay_background",
+          "label": "Background color",
+          "default": "#000000"
+        },
+        {
+          "type": "range",
+          "id": "overlay_opacity",
+          "label": "Background color opacity",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "default": 50
+        },
+        {
+          "type": "url",
+          "id": "link_overlay",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "button_text_overlay",
+          "label": "Button text",
+          "default": "Button"
+        }
+      ]
+    },
+    {
+      "type": "rich_text",
+      "name": "Rich Text",
+      "settings": [
+          {
+            "id": "width",
+            "type": "select",
+            "label": "Section width",
+            "options": [
+              {
+                "value": "regular",
+                "label": "Regular"
+              },
+              {
+                "value": "wide",
+                "label": "Wide"
+              },
+              {
+                "value": "full-width",
+                "label": "Full width"
+              }
+            ],
+            "default": "regular"
+        },
+        {
+          "id": "heading_size",
+          "type": "select",
+          "label": "Heading size",
+          "options": [
+            {
+              "value": "small",
+              "label": "Small"
+            },
+            {
+              "value": "medium",
+              "label": "Medium"
+            },
+            {
+              "value": "large",
+              "label": "Large"
+            }
+          ],
+          "default": "large"
+        },
+        {
+          "type": "text",
+          "id": "rt_heading",
+          "label": "Heading",
+          "default": "Welcome"
+        },
+        {
+          "type": "richtext",
+          "id": "rt_text",
+          "label": "Text",
+          "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+        },
+        {
+          "type": "select",
+          "id": "text_align",
+          "label": "Text alignment",
+          "default": "left",
+          "options": [
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "left",
+              "label": "Left"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "left-right-section",
+      "name": "left Right Section",
+    	"settings": [
+    		{
+            "type": "image_picker",
+            "id": "image_l_r",
+            "label": "Image"
+          },
+    	  {
+            "type": "select",
+            "id": "layout",
+            "label": "Image alignment",
+            "default": "left",
+            "options": [
+              {
+                "value": "left",
+                "label": "Left"
+              },
+              {
+                "value": "right",
+                "label": "Right"
+              }
+            ]
+           },
+    	   {
+                "type": "text",
+                "id": "title_l_r",
+                "label": "Heading",
+                "default": "Image with text"
+            },
+            {
+                "type": "richtext",
+                "id": "text_l_r",
+                "label": "Text",
+                "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+             },
+    		{
+                "type": "text",
+                "id": "button_label",
+                "label": "Button label"
+             },
+             {
+                "type": "url",
+                "id": "button_link_l_r",
+                "label": "Button link"
+            }
+    	 ]
+    	}
+  ]
+}
+{% endschema %}

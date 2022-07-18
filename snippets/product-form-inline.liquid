@@ -1,0 +1,62 @@
+{% assign payment_buttons = blank %}
+
+{% if product != blank and show_payment_button %}
+  {% capture throwaway %}
+    {% form 'product', product, class: 'product-form' %}
+      {% capture payment_buttons %}
+        {{ form | payment_button }}
+      {% endcapture %}
+    {% endform %}
+  {% endcapture %}
+{% endif %}
+
+{% capture form_classes %}
+  product-form-inline
+  {% if show_payment_button %}
+    product-form-payment-buttons
+  {% endif %}
+{% endcapture %}
+
+{%
+  form 'product',
+  product,
+  class: form_classes,
+  data-product-form-inline: ''
+%}
+  {% include 'product-options', type: 'select' %}
+
+  <div class="product-form-inline-atc">
+    {% include 'quantity' %}
+
+    <button
+      class="product-form-inline-atc-button"
+      type="submit"
+      data-product-atc
+    >
+      <span data-product-inline-atc-text>{{ 'product.add_to_cart.available' | t }}</span>
+      <span class="spinner"></span>
+    </button>
+    {%- if product.available != true -%}
+    <div class="out-of-stock-news">
+      <h3>Email me when available</h3>
+      <span>Please Notify me when this product is available</span>
+        {% include 'newsletter' %}
+    </div>
+    {%- endif -%}
+
+    {{ payment_buttons }}
+  </div>
+{% endform %}
+
+<style>
+  .out-of-stock-news {
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+  .newsletter-input {
+    border: 1px solid #e1e1e1 !important;
+  }
+  .newsletter-submit {
+    padding: 15px !important;
+  }
+</style>

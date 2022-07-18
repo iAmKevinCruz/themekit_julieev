@@ -1,0 +1,55 @@
+<div class="header-minicart">
+  <script
+    type="application/json"
+    data-section-id="null"
+    data-section-type="header-minicart"
+  >
+  </script>
+
+  <div class="header-minicart-drawer minicart-wrapper" data-header-minicart-drawer>
+    <div class="header-minicart-header">
+      <h2 class="header-minicart-heading" data-header-minicart-title="{{ 'cart.title_minicart' | t }}">
+        {{ 'cart.title_minicart' | t }} ({{ cart.item_count }})
+      </h2>
+
+      <button
+        class="header-minicart-slideout-dismiss"
+        type="button"
+        aria-label="{{ 'general.form.close' | t }}"
+        data-site-header-minicart-dismiss
+      >
+        {%- include 'icon', id: 'close' -%}
+      </button>
+    </div>
+    <div class="header-minicart-content-loading">
+      <div class="spinner"></div>
+    </div>
+    <div class="header-minicart-content" data-cart-items></div>
+    <div class="header-minicart-footer">
+      <div class="header-minicart-footer-wrapper">
+        <div
+          class="header-minicart-discounts"
+          data-cart-discounts-simplified
+        ></div>
+        <div
+          class="header-minicart-interactions"
+        >
+          <a
+            class="product-menu-button-secondary"
+            href="{{ routes.cart_url }}"
+          >
+              {{ 'product.view_cart' | t }}
+          </a>
+          <form action="{{ routes.cart_url }}" method="POST">
+            <button class="product-menu-button product-menu-button-primary" type="submit" name="checkout">
+              <span>
+                {{ 'cart.button_checkout_title' | t }}
+              </span>
+              <span class="money" data-cart-subtotal></span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
