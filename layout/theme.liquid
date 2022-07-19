@@ -58,6 +58,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </script>
 
     {{ 'theme.css' | asset_url | stylesheet_tag }}
+    {{ 'custom.css' | asset_url | stylesheet_tag }}
     {% include 'google-fonts', fonts: 'font_title|font_body|font_label' %}
 
     {{ content_for_header }}
